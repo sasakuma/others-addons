@@ -3,7 +3,9 @@ from lxml import etree
 from odoo import tools, models, fields, api
 from odoo.tools.translate import _
 
+
 class vieterp_mail_inbox(models.Model):
+
     _inherit = ['mail.mail']
     _name = 'mail.inbox'
 
