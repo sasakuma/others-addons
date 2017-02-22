@@ -19,13 +19,25 @@ class CrmTeamInherit(models.Model):
 
     @api.model
     def create(self, values):
-        values['team_members'] = [(4, values['user_id'])]
+        if 'team_members' not in values:
+            values['team_members'] = [(4, values['user_id'])]
+        else:
+            values['team_members'][0][2].append(values['user_id'])
+
         return super(CrmTeamInherit, self).create(values)
 
     @api.multi
     def write(self, values):
+
+        if 'user_id' not in values and self.user_id:
+            values['user_id'] = self.user_id.id
+
         if 'user_id' in values:
-            values['team_members'] = [(4, values['user_id'])]
+            if 'team_members' not in values:
+                values['team_members'] = [(4, values['user_id'])]
+            else:
+                values['team_members'][0][2].append(values['user_id'])
+
         return super(CrmTeamInherit, self).write(values)
 
 
