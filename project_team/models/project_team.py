@@ -49,7 +49,7 @@ class ProjectProject(models.Model):
                               domain=[('type_team', '=', 'project')])
 
     members = fields.Many2many('res.users', string='Project Members',
-                               related='team_id.team_members',
+                               readonly=True, related='team_id.team_members',
                                help="""Project's members are users who can
                                have an access to the tasks related to this
                                project.""")
