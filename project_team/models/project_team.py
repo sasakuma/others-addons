@@ -53,7 +53,3 @@ class ProjectProject(models.Model):
                                help="""Project's members are users who can
                                have an access to the tasks related to this
                                project.""")
-
-    # @api.onchange('team_id')
-    # def get_team_members(self):
-    #     self.members = [(6, 0, [rec.id for rec in self.team_id.team_members])]
