@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'license': 'LGPL-3',
     'name': "Document Manage",
     'summary': "manage related document attachments",
     'description': """
     """,
     'author': "renjie <i@renjie.me>",
     'website': "http://renjie.me",
+    'license': 'LGPL-3',
     'category': 'Document Management',
     'version': '1.1',
     'depends': ['document'],
