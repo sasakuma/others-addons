@@ -40,7 +40,7 @@ Module to Restrict Multiple Sign in for Same User in Odoo.""",
 		'scheduler.xml',
 		],
 	'demo_xml': [],
-	'installable': True,
+	'installable': False,
 	'application': True,
 	'auto_install': False,
 }
