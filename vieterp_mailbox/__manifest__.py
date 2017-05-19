@@ -60,6 +60,6 @@
     'demo': [
     ],
     'images': ['static/description/icon.png'],
-    'installable': True,
+    'installable': False,
     'application': True,
 }

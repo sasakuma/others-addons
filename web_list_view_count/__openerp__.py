@@ -32,7 +32,7 @@
     'sequence': 9,
     'depends': ['web'],
     'data': [],
-    'installable': True,
+    'installable': False,
     'application': True,
     'auto_install': False,
     'qweb': [

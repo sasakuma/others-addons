@@ -13,7 +13,7 @@
     'data': [
         'views/webclient_templates.xml',
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }

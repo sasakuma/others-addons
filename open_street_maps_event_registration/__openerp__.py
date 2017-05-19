@@ -11,5 +11,5 @@
     'demo': [],
     'images':['static/description/2.jpg'],
     'depends': ['event','crm'],
-    'installable': True,
+    'installable': False,
 }

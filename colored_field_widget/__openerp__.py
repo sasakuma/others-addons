@@ -1,4 +1,4 @@
-#-*- coding:utf-8 -*-
+# -*- coding:utf-8 -*-
 {
     'name': 'Custom colored widgets',
     'version': '0.1',
@@ -18,7 +18,8 @@ A collection of custom widgets:
     'data': [
         "custom_widget.xml"
     ],
-    'qweb':[
-         'static/src/xml/template_update.xml'
-    ]
+    'qweb': [
+        'static/src/xml/template_update.xml'
+    ],
+    'installable': True,
 }

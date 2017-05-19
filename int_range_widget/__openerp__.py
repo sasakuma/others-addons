@@ -38,6 +38,6 @@ This project aims to create integer range for input
     'qweb': [
         "static/src/xml/*.xml",
     ],
-    'installable': True,
+    'installable': False,
     'application': True,
 }

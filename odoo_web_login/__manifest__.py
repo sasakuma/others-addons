@@ -41,6 +41,6 @@ The new configurable Odoo Web Login Screen
     ],
     'qweb': [
     ],
-    'installable': True,
+    'installable': False,
     'application': True,
 }

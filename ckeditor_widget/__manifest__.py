@@ -29,5 +29,6 @@ Based on CKEditor 4.6 `Docs in CKEditor
     # always loaded
     "data": ['views/assets_templates.xml'],
     "qweb": ['static/src/xml/editor.xml'],
-    'images': ['static/description/main_screenshot.png']
+    'images': ['static/description/main_screenshot.png'],
+    'installable': True,
 }

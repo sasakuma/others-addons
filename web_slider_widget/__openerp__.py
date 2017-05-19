@@ -88,7 +88,7 @@ Before setting the widget, avoid garbage values in the field to avoid errors.
             ],
     'qweb':["static/src/xml/slider.xml"],
     'demo': [],
-    'installable': True,
+    'installable': False,
     'application': True,
     'auto_install': False,
    # 'price':1.00,
