@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<templates>
+    <t t-name="postit_systray_menu.PostitItem">
+        <li class="oe_chatter">
+            <a href="#" title="Postit">
+                <i class="fa fa-sticky-note-o"/>
+            </a>
+        </li>
+    </t>
+</templates>
