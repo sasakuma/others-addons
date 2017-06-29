@@ -36,7 +36,6 @@ class PrismePostit(models.Model):
     date_start = fields.Date(string="Date start")
     date_end = fields.Date(string="Date end")
     expected_date = fields.Date(string="Expected Date")
-    # duration = fields.Char(string='Duration')
     state = fields.Selection([('active', 'Non termine'),
                               ('in_process', 'En cours'), (
                                   'terminated', 'Termine'), ],
@@ -58,10 +57,6 @@ class PrismePostit(models.Model):
         UPDATE OR DELETE ON prisme_postit_assignedto_rel WHEN (
         pg_trigger_depth() < 1) EXECUTE PROCEDURE postit_update();""")
 
-    # @api.model
-    # def action_start(self):
-    #     return self.write({'state': 'get_started'})
-
     @api.model
     def action_in_process(self):
         self.state = 'in_process'
@@ -78,38 +73,20 @@ class PrismePostit(models.Model):
 
     @api.model
     def scheduled_action(self, context=None):
-        # cr, uid, context = self.env.args
-        # import time
-        # print 'Lancement du planificateur(' + time.strftime(
-        #     '%d.%m.%Y %H:%M:%S', time.localtime()) + ')'
         self._check_postit_dates()
 
     @api.model
     def _check_postit_dates(self):
-        # print 'Scan des postit de la base'
-        # print self
-
-        # postits_ids = self.search([("state", "!=", "closed")])
 
         postits = self.search([('state', '!=', 'closed')])
         for p in postits:
-
-            # print '-------------------------------------------------------'
-            # print 'Postit en traitement'
             if p.state != "closed":
-                # print 'Satut ouvert'
                 if p.recall_date:
                     recall_date = datetime.strptime(p.recall_date, "%Y-%m-%d")
-
-                    # Si la date de rappelle est passee
                     if recall_date <= datetime.now():
-                        # print 'Date de rappel depasse'
-                        # Si la garantie est en cours de renouvellement
                         if p.state == "start" or \
                                         p.state == "in_process" or \
                                         p.state == "active":
-                            # self._log('Garantie en cours de renouvellement')
-                            # On envoie un rappel uniquement si on est jeudi
                             if p.days:
                                 weekday = p.days
                                 for day in weekday:
@@ -119,7 +96,6 @@ class PrismePostit(models.Model):
 
     @api.model
     def _notify_recall(self, message):
-        # print 'Creation du mail'
         subject = self._construct_subject(message)
         body = self._construct_body()
 
@@ -136,24 +112,20 @@ class PrismePostit(models.Model):
         sender = 'Postit - OpenERP (' + self.env.cr.dbname + \
                  ') <system.openerp@prisme.ch>'
 
-        # If the field assigned by has been filled
         if ass_by:
             # Sending e-mail to the user
             self._send_email(sender, ass_by, subject, body)
         if ass_to_list:
             for ass_to in ass_to_list:
                 if not ass_to.email == ass_by:
-                    # print 'envoie email ass to'
                     self._send_email(sender, ass_to.email, subject, body)
         if copy_to_list:
             for copy_to in copy_to_list:
                 if not copy_to == ass_by and not copy_to.email == ass_to.email:
-                    # print 'envoie email ass by'
                     self._send_email(sender, copy_to, subject, body)
 
     @api.model
     def _construct_subject(self, message):
-        # print 'construction du sujet'
         end_date_string = ""
         if self.date_end:
             end_date_string = "(" + self.date_end + ")"
@@ -162,7 +134,6 @@ class PrismePostit(models.Model):
 
     @api.model
     def _construct_body(self):
-        # print 'construction du corps'
 
         body = "Rappel d'expiration de tache" + "\n"
         body = body + "-------------------------------\n\n"
@@ -200,7 +171,6 @@ class PrismePostit(models.Model):
 
     @api.model
     def _send_email(self, sender, recipient, subject, body):
-        # print 'Tentative envoie du mail'
         tools.email_send(email_from=sender, email_to=[recipient], \
                          subject=subject, body=body)
 
@@ -209,7 +179,7 @@ class PrismePostit(models.Model):
         print message
 
     def notificate_postit(self):
-        message_id = self.message_ids[0]
+        message_id = self.message_ids[-1]
         mail_channel = self.env['mail.channel']
 
         list_assigned_to = [item for item in self.assigned_to if item]
@@ -234,5 +204,7 @@ class PrismePostit(models.Model):
             values['channel_partner_ids'] = [
                 (4, [item.partner_id.id for item in list_partners])]
             channel_id = mail_channel.create(values)
-
+        #
+        # message_id.message_type = 'comment'
+        # message_id.model = 'mail.channel'
         message_id.channel_ids = [(6, 0, [channel_id.id])]

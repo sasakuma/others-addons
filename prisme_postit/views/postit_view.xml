@@ -17,11 +17,6 @@
                                 type="object"
                                 string="Notificate"/>
 
-                        <!--<button name="get_started"-->
-                        <!--type="workflow"-->
-                        <!--string="Start"-->
-                        <!--states="active"/>-->
-
                         <button name="in_process"
                                 type="workflow"
                                 string="In process"
@@ -52,8 +47,7 @@
                         <field name="date_start" readonly="1"/>
                         <field name="date_end" readonly="1"/>
                         <field name="expected_date"/>expected_date
-                        <!--<field name="duration"/>-->
-                        <!--<field name="status"/>-->
+
                     </group>
                     <group>
                         <notebook>
@@ -163,21 +157,7 @@
                 </kanban>
             </field>
         </record>
-
-        <!-- Postit postit Calendar View-->
-        <!--<record model="ir.ui.view" id="view_prisme_postit_calendar">-->
-        <!--<field name="name">prisme.postit.calendar</field>-->
-        <!--<field name="model">prisme.postit</field>-->
-        <!--<field name="priority" eval="2"/>-->
-        <!--<field name="arch" type="xml">-->
-        <!--<calendar string="Postit Calendar" date_start="date_start" date_stop="recall_date" color="state">-->
-        <!--<field name="name"/>-->
-        <!--<field name="names_users"/>-->
-        <!--</calendar>-->
-        <!--</field>-->
-        <!--</record>-->
-
-        <!-- Prisme postit -->
+        
         <record model="ir.actions.act_window" id="action_prisme_postit">
             <field name="name">Postit</field>
             <field name="res_model">prisme.postit</field>
