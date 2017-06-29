@@ -13,11 +13,14 @@
                                 type="workflow"
                                 string="To do"
                                 states="terminated,in_process"/>
+                        <button name="notificate_postit"
+                                type="object"
+                                string="Notificate"/>
 
                         <!--<button name="get_started"-->
-                                <!--type="workflow"-->
-                                <!--string="Start"-->
-                                <!--states="active"/>-->
+                        <!--type="workflow"-->
+                        <!--string="Start"-->
+                        <!--states="active"/>-->
 
                         <button name="in_process"
                                 type="workflow"
@@ -43,11 +46,12 @@
                         <field name="assigned_by" readonly="1"/>
                         <field name="partner_id"/>
                         <field name="days" widget="many2many_tags"
-                               placeholder="Days..."/>
+                               placeholder="Days..."
+                               attrs="{'invisible': True}"/>
                         <field name="priority" widget="priority"/>
-                        <field name="date_start"/>
-                        <field name="date_end"/>
-                        <field name="expected_date"/>
+                        <field name="date_start" readonly="1"/>
+                        <field name="date_end" readonly="1"/>
+                        <field name="expected_date"/>expected_date
                         <!--<field name="duration"/>-->
                         <!--<field name="status"/>-->
                     </group>
@@ -115,7 +119,7 @@
             <field name="name">prisme.postit.kanban</field>
             <field name="model">prisme.postit</field>
             <field name="arch" type="xml">
-                <kanban default_group_by="state" class="o_kanban_small_column"
+                <kanban default_group_by="state" class="oe_kanban_color_X"
                         default_order="state">
                     <field name="name"/>
                     <field name="state"/>
@@ -142,6 +146,10 @@
                                         <p>
                                             <strong>Client:</strong>
                                             <field name="partner_id"/>
+                                        </p>
+                                        <p>
+                                            <strong>Priority:</strong>
+                                            <field name="priority"/>
                                         </p>
                                         <span class="oe_kanban_list_many2many">
                                             <field name="tags"/>
@@ -174,6 +182,9 @@
             <field name="name">Postit</field>
             <field name="res_model">prisme.postit</field>
             <field name="view_mode">tree,form,kanban,calendar</field>
+            <field name="domain">['|','|',('assigned_by', '=', uid),
+                ('copy_to', '=', uid),('assigned_to', '=', uid)]
+            </field>
             <field name="search_view_id" ref="view_prisme_postit_search"/>
         </record>
 
