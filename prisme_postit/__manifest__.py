@@ -20,20 +20,24 @@
 ##############################################################################
 
 {
-    'name': 'Prisme postit',
-    'version': '2017-03-08 16:17',
-    'category': 'Tools',
-    'summary': "task manager, reminder",
-    'author': 'Prisme Solutions Informatique SA',
-    'website': 'https://www.prisme.ch',
-    'summary': 'tasks and reminders manager',
-    'sequence': 9,
+    'name':'Postit',
+    'version': '10.0.1.0.0',
+    'author': 'MultidadosTI',
+    'maintainer': 'MultidadosTI',
+    'website': 'www.multidadosti.com.br',
+    'license': 'LGPL-3',
+    'category': 'Extra Tools',
+    'summary': 'This Module creates a widget in navbar that links to postit '
+               'views.',
+    'contributors': [
+        'Rodrigo Ferreira <rodrigosferreira91@gmail.com>',
+    ],
     'depends': [
         'mail',
     ],
     'data': [
-        'data/postit_view.xml',
-        'data/postit_workflow.xml',
+        'views/postit_view.xml',
+        'views/postit_workflow.xml',
 
     ],
     'demo': [
