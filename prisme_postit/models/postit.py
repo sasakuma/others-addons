@@ -4,17 +4,17 @@ from odoo import tools
 from odoo import models, fields, api, exceptions, _
 
 AVAILABLE_PRIORITIES = [
-    ('0', 'Very Low'),
-    ('1', 'Low'),
+    ('0', 'Muito Baixa'),
+    ('1', 'Baixa'),
     ('2', 'Normal'),
-    ('3', 'High'),
-    ('4', 'Very High')]
+    ('3', 'Alta'),
+    ('4', 'Muito Alta')]
 
 
 class PrismePostit(models.Model):
     """ Post It data """
     _name = 'prisme.postit'
-    _description = 'Prisme postit'
+    _description = 'Postit'
     _inherit = ['mail.thread']
 
     name = fields.Char(string="Name", required=True)
@@ -23,7 +23,8 @@ class PrismePostit(models.Model):
     assigned_by = fields.Many2one('res.users', string="Assigned by",
                                   default=lambda self: self._uid)
     assigned_to = fields.Many2many('res.users', 'prisme_postit_assignedto_rel',
-                                   string="Assigned to")
+                                   string="Assigned to",
+                                   required=True)
     copy_to = fields.Many2many('res.users', 'prisme_postit_copyto_rel',
                                string="Copy to")
     partner_id = fields.Many2one('res.partner', string="Client")
@@ -132,7 +133,7 @@ class PrismePostit(models.Model):
         if self.copy_to:
             copy_to_list = self.copy_to
 
-        sender = 'Prisme - OpenERP (' + self.env.cr.dbname + \
+        sender = 'Postit - OpenERP (' + self.env.cr.dbname + \
                  ') <system.openerp@prisme.ch>'
 
         # If the field assigned by has been filled
@@ -179,7 +180,7 @@ class PrismePostit(models.Model):
         if self.duration:
             body = body + "Duree: " + self.duration + "\n"
         if self.recall_date:
-            body = body + "Date echeance Prisme: " + self.recall_date + "\n\n"
+            body = body + "Date echeance Postit: " + self.recall_date + "\n\n"
 
         if self.assigned_to:
             for ass_to in self.assigned_to:
@@ -206,3 +207,32 @@ class PrismePostit(models.Model):
     @api.model
     def _log(self, message):
         print message
+
+    def notificate_postit(self):
+        message_id = self.message_ids[0]
+        mail_channel = self.env['mail.channel']
+
+        list_assigned_to = [item for item in self.assigned_to if item]
+        list_copy_to = [item for item in self.copy_to if item]
+
+        list_partners = set([self.assigned_by] + list_assigned_to +
+                            list_copy_to)
+        list_partners = [item for item in list_partners if item]
+        list_partners.sort()
+        channel_id = mail_channel.search(
+            [('channel_partner_ids', '=', [
+                item.partner_id.id for item in list_partners]),
+             ('name', '=', 'Postit %s' % ('/'.join(
+                 [item.name for item in list_partners])))])
+        channel_id = channel_id and channel_id[0]
+        values = {}
+        if not channel_id:
+            values['name'] = 'Postit %s' % \
+                             ('/'.join([item.name for item in list_partners]))
+            values['public'] = 'public'
+
+            values['channel_partner_ids'] = [
+                (4, [item.partner_id.id for item in list_partners])]
+            channel_id = mail_channel.create(values)
+
+        message_id.channel_ids = [(6, 0, [channel_id.id])]
