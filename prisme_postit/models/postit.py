@@ -43,20 +43,26 @@ class PrismePostit(models.Model):
                              default='active')
 
     def init(self):
-        self.env.cr.execute("""DROP TRIGGER IF EXISTS postit_update ON 
-        prisme_postit_assignedto_rel;""")
-        self.env.cr.execute("""CREATE OR REPLACE FUNCTION postit_update() 
-        RETURNS trigger AS $$ BEGIN IF pg_trigger_depth() <> 1 THEN RETURN NEW;
-        END IF; UPDATE prisme_postit SET names_users = subquery.string_agg
-        FROM (SELECT ppar.prisme_postit_id,string_agg(partner.name, ', ') 
-        FROM prisme_postit_assignedto_rel ppar JOIN res_users users ON 
-        users.id=ppar.res_users_id JOIN res_partner partner ON 
-        partner.id=users.partner_id GROUP BY ppar.prisme_postit_id) 
-        AS subquery Where prisme_postit.id=subquery.prisme_postit_id; 
-        RETURN NEW; END; $$ LANGUAGE plpgsql;""")
-        self.env.cr.execute("""CREATE TRIGGER postit_update AFTER INSERT OR 
-        UPDATE OR DELETE ON prisme_postit_assignedto_rel WHEN (
-        pg_trigger_depth() < 1) EXECUTE PROCEDURE postit_update();""")
+        self.env.cr.execute('DROP TRIGGER IF EXISTS postit_update ON '
+                            'prisme_postit_assignedto_rel;')
+
+        sql = ("CREATE OR REPLACE FUNCTION postit_update() RETURNS trigger "
+               "AS $$ BEGIN IF pg_trigger_depth() <> 1 THEN RETURN NEW;"
+               "END IF; UPDATE prisme_postit SET names_users = "
+               "subquery.string_agg FROM "
+               "(SELECT ppar.prisme_postit_id,string_agg(partner.name, ', ') "
+               "FROM prisme_postit_assignedto_rel ppar JOIN res_users users ON"
+               " users.id=ppar.res_users_id JOIN res_partner partner ON "
+               "partner.id=users.partner_id GROUP BY ppar.prisme_postit_id) "
+               "AS subquery Where prisme_postit.id=subquery.prisme_postit_id; "
+               "RETURN NEW; END; $$ LANGUAGE plpgsql;")
+
+        self.env.cr.execute(sql)
+
+        self.env.cr.execute("CREATE TRIGGER postit_update AFTER INSERT OR "
+                            "UPDATE OR DELETE ON prisme_postit_assignedto_rel "
+                            "WHEN (pg_trigger_depth() < 1) EXECUTE PROCEDURE "
+                            "postit_update();")
 
     @api.model
     def action_in_process(self):
@@ -81,18 +87,16 @@ class PrismePostit(models.Model):
 
         postits = self.search([('state', '!=', 'closed')])
         for p in postits:
-            if p.state != "closed":
-                if p.recall_date:
-                    recall_date = datetime.strptime(p.recall_date, "%Y-%m-%d")
-                    if recall_date <= datetime.now():
-                        if p.state == "start" or p.state == "in_process" or \
-                                        p.state == "active":
-                            if p.days:
-                                weekday = p.days
-                                for day in weekday:
-                                    if datetime.now().weekday() == day.nbr:
-                                        p._notify_recall(
-                                            " en cours, echeance le ")
+            if p.state != "closed" and p.recall_date:
+                recall_date = datetime.strptime(p.recall_date, "%Y-%m-%d")
+
+                if recall_date <= datetime.now() and p.state in ["start",
+                                                                 "in_process",
+                                                                 "active"]:
+                    weekday = p.days if p.days else []
+                    for day in weekday:
+                        if datetime.now().weekday() == day.nbr:
+                            p._notify_recall(" en cours, echeance le ")
 
     @api.model
     def _notify_recall(self, message):
