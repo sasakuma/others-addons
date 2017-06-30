@@ -1,0 +1,335 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* prisme_postit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-29 14:47+0000\n"
+"PO-Revision-Date: 2017-06-29 11:58-0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: pt\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: prisme_postit
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_kanban
+msgid "<strong>Assigned by:</strong>"
+msgstr "<strong>Assigned by:</strong>"
+
+#. module: prisme_postit
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_kanban
+msgid "<strong>Assigned to:</strong>"
+msgstr "<strong>Assigned to:</strong>"
+
+#. module: prisme_postit
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_kanban
+msgid "<strong>Client:</strong>"
+msgstr "<strong>Client:</strong>"
+
+#. module: prisme_postit
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_kanban
+msgid "<strong>Priority:</strong>"
+msgstr "<strong>Priority:</strong>"
+
+#. module: prisme_postit
+#: selection:prisme.postit,priority:0
+msgid "Alta"
+msgstr "Alta"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_assigned_by
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_search
+msgid "Assigned by"
+msgstr "Assinado por"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_assigned_to
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_names_users
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_search
+msgid "Assigned to"
+msgstr "Assinado para"
+
+#. module: prisme_postit
+#: selection:prisme.postit,priority:0
+msgid "Baixa"
+msgstr "Baixa"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_partner_id
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_search
+msgid "Client"
+msgstr "Cliente"
+
+#. module: prisme_postit
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_form
+msgid "Close"
+msgstr "Fechar"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_copy_to
+msgid "Copy to"
+msgstr "Cópia para"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_create_uid
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_day_create_uid
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_tag_create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_create_date
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_day_create_date
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_tag_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_date_end
+msgid "Date end"
+msgstr "Data Final"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_date_start
+msgid "Date start"
+msgstr "Data Inicial"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_day_name
+msgid "Day name"
+msgstr "Dia"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_day_nbr
+msgid "Day number"
+msgstr "Número do Dia"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_days
+msgid "Days"
+msgstr "Dias"
+
+#. module: prisme_postit
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_form
+msgid "Days..."
+msgstr "Dias.."
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_description
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_form
+msgid "Description"
+msgstr "Descrição"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_day_display_name
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_display_name
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_tag_display_name
+msgid "Display Name"
+msgstr "Nome para Exibição"
+
+#. module: prisme_postit
+#: selection:prisme.postit,state:0
+msgid "En cours"
+msgstr "Em processo"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_expected_date
+msgid "Expected Date"
+msgstr "Data Esperada"
+
+#. module: prisme_postit
+#: model:prisme.postit.day,name:prisme_postit.4
+msgid "Friday"
+msgstr "Sexta-Feira"
+
+#. module: prisme_postit
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_search
+msgid "Group By"
+msgstr "Agrupar Por"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_day_id
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_id
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_tag_id
+msgid "ID"
+msgstr "ID"
+
+#. module: prisme_postit
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_form
+msgid "In process"
+msgstr "Em Processo"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit___last_update
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_day___last_update
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_tag___last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_day_write_uid
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_tag_write_uid
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_day_write_date
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_tag_write_date
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: prisme_postit
+#: model:prisme.postit.day,name:prisme_postit.0
+msgid "Monday"
+msgstr "Segunda-Feira"
+
+#. module: prisme_postit
+#: selection:prisme.postit,priority:0
+msgid "Muito Alta"
+msgstr "Muito Alta"
+
+#. module: prisme_postit
+#: selection:prisme.postit,priority:0
+msgid "Muito Baixa"
+msgstr "Muito Baixa"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_name
+msgid "Name"
+msgstr "Nome"
+
+#. module: prisme_postit
+#: selection:prisme.postit,state:0
+msgid "Non termine"
+msgstr "Não Realizado"
+
+#. module: prisme_postit
+#: selection:prisme.postit,priority:0
+msgid "Normal"
+msgstr "Normal"
+
+#. module: prisme_postit
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_form
+msgid "Notificate"
+msgstr "Notificação"
+
+#. module: prisme_postit
+#: model:ir.ui.menu,name:prisme_postit.menu_prisme_postit
+msgid "PostIt"
+msgstr "PostIt"
+
+#. module: prisme_postit
+#: model:ir.ui.menu,name:prisme_postit.menu_prisme_postit_tag
+msgid "PostIt Tag"
+msgstr "Postit Tarefa"
+
+#. module: prisme_postit
+#: model:ir.actions.act_window,name:prisme_postit.action_prisme_postit
+#: model:ir.model,name:prisme_postit.model_prisme_postit
+#: model:ir.ui.menu,name:prisme_postit.menu_prisme_postit_base
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_form
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_search
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_tree
+msgid "Postit"
+msgstr "Postit"
+
+#. module: prisme_postit
+#: model:ir.model,name:prisme_postit.model_prisme_postit_day
+msgid "Postit Day"
+msgstr "Postit Tarefa"
+
+#. module: prisme_postit
+#: model:ir.actions.act_window,name:prisme_postit.action_prisme_postit_tag
+#: model:ir.model,name:prisme_postit.model_prisme_postit_tag
+msgid "Postit Tag"
+msgstr "Postit Tarefa"
+
+#. module: prisme_postit
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_tag_form
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_tag_search
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_tag_tree
+msgid "Postit tag"
+msgstr "Postit Tarefa"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_priority
+msgid "Priority"
+msgstr "Prioridade"
+
+#. module: prisme_postit
+#: model:prisme.postit.day,name:prisme_postit.5
+msgid "Saturday"
+msgstr "Sábado"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_state
+msgid "State"
+msgstr "Estado"
+
+#. module: prisme_postit
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_search
+msgid "Statut"
+msgstr "Status"
+
+#. module: prisme_postit
+#: model:prisme.postit.day,name:prisme_postit.6
+msgid "Sunday"
+msgstr "Domingo"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_tag_name
+msgid "Tag name"
+msgstr "Nome da Tarefa"
+
+#. module: prisme_postit
+#: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_tags
+msgid "Tags"
+msgstr "Marcadores"
+
+#. module: prisme_postit
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_form
+msgid "Tags..."
+msgstr "Tarefas..."
+
+#. module: prisme_postit
+#: selection:prisme.postit,state:0
+msgid "Termine"
+msgstr "Terminado"
+
+#. module: prisme_postit
+#: model:prisme.postit.day,name:prisme_postit.3
+msgid "Thursday"
+msgstr "Quinta-Feira"
+
+#. module: prisme_postit
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_form
+msgid "To do"
+msgstr "Façam"
+
+#. module: prisme_postit
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_form
+msgid "To..."
+msgstr "Para..."
+
+#. module: prisme_postit
+#: model:prisme.postit.day,name:prisme_postit.1
+msgid "Tuesday"
+msgstr "Terça-Feira"
+
+#. module: prisme_postit
+#: model:prisme.postit.day,name:prisme_postit.2
+msgid "Wednesday"
+msgstr "Quarta-Feira"
+
+#. module: prisme_postit
+#: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_form
+msgid "expected_date"
+msgstr "expected_date"
