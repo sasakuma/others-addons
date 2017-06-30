@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import print_function
 import datetime
 from odoo import tools
 from odoo import api, fields, models
@@ -46,13 +47,13 @@ class PrismePostit(models.Model):
         prisme_postit_assignedto_rel;""")
         self.env.cr.execute("""CREATE OR REPLACE FUNCTION postit_update() 
         RETURNS trigger AS $$ BEGIN IF pg_trigger_depth() <> 1 THEN RETURN NEW;
-         END IF; UPDATE prisme_postit SET names_users = subquery.string_agg
-          FROM (SELECT ppar.prisme_postit_id,string_agg(partner.name, ', ') 
-          FROM prisme_postit_assignedto_rel ppar JOIN res_users users ON 
-          users.id=ppar.res_users_id JOIN res_partner partner ON 
-          partner.id=users.partner_id GROUP BY ppar.prisme_postit_id) 
-          AS subquery Where prisme_postit.id=subquery.prisme_postit_id; 
-          RETURN NEW; END; $$ LANGUAGE plpgsql;""")
+        END IF; UPDATE prisme_postit SET names_users = subquery.string_agg
+        FROM (SELECT ppar.prisme_postit_id,string_agg(partner.name, ', ') 
+        FROM prisme_postit_assignedto_rel ppar JOIN res_users users ON 
+        users.id=ppar.res_users_id JOIN res_partner partner ON 
+        partner.id=users.partner_id GROUP BY ppar.prisme_postit_id) 
+        AS subquery Where prisme_postit.id=subquery.prisme_postit_id; 
+        RETURN NEW; END; $$ LANGUAGE plpgsql;""")
         self.env.cr.execute("""CREATE TRIGGER postit_update AFTER INSERT OR 
         UPDATE OR DELETE ON prisme_postit_assignedto_rel WHEN (
         pg_trigger_depth() < 1) EXECUTE PROCEDURE postit_update();""")
@@ -84,8 +85,7 @@ class PrismePostit(models.Model):
                 if p.recall_date:
                     recall_date = datetime.strptime(p.recall_date, "%Y-%m-%d")
                     if recall_date <= datetime.now():
-                        if p.state == "start" or \
-                                        p.state == "in_process" or \
+                        if p.state == "start" or p.state == "in_process" or \
                                         p.state == "active":
                             if p.days:
                                 weekday = p.days
@@ -171,12 +171,12 @@ class PrismePostit(models.Model):
 
     @api.model
     def _send_email(self, sender, recipient, subject, body):
-        tools.email_send(email_from=sender, email_to=[recipient], \
+        tools.email_send(email_from=sender, email_to=[recipient],
                          subject=subject, body=body)
 
     @api.model
     def _log(self, message):
-        print message
+        print(message)
 
     def notificate_postit(self):
         message_id = self.message_ids[-1]

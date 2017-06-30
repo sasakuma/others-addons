@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name':'Postit',
+    'name': 'Postit',
     'version': '10.0.1.0.0',
     'author': 'MultidadosTI',
     'maintainer': 'MultidadosTI',
@@ -26,14 +26,14 @@
     'test': [
     ],
     'init_xml': [
-    'data/init_scheduler.xml',
+        'data/init_scheduler.xml',
 
     ],
     'update_xml': [
-    'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
     ],
     'css': [
-     'static/src/css/note.css',
+        'static/src/css/note.css',
     ],
     'images': [
     ],
