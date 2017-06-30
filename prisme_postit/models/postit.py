@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import datetime
 from odoo import tools
-from odoo import models, fields, api, exceptions, _
+from odoo import api, fields, models
 
 AVAILABLE_PRIORITIES = [
     ('0', 'Muito Baixa'),
@@ -204,7 +204,6 @@ class PrismePostit(models.Model):
             values['channel_partner_ids'] = [
                 (4, [item.partner_id.id for item in list_partners])]
             channel_id = mail_channel.create(values)
-        #
-        # message_id.message_type = 'comment'
-        # message_id.model = 'mail.channel'
+
         message_id.channel_ids = [(6, 0, [channel_id.id])]
+        message_id._notify()
