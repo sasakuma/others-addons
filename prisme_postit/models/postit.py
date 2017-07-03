@@ -2,7 +2,7 @@
 from __future__ import print_function
 import datetime
 from odoo import tools
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 
 AVAILABLE_PRIORITIES = [
     ('0', 'Muito Baixa'),
@@ -20,7 +20,7 @@ class PrismePostit(models.Model):
 
     name = fields.Char(string="Name", required=True)
     names_users = fields.Char(string="Assigned to")
-    description = fields.Text()
+    description = fields.Text(required='True')
     assigned_by = fields.Many2one('res.users', string="Assigned by",
                                   default=lambda self: self._uid)
     assigned_to = fields.Many2many('res.users', 'prisme_postit_assignedto_rel',
@@ -31,6 +31,7 @@ class PrismePostit(models.Model):
     partner_id = fields.Many2one('res.partner', string="Client")
     priority = fields.Selection(string="Priority",
                                 selection=AVAILABLE_PRIORITIES,
+                                default='0',
                                 select=True)
     tags = fields.Many2many('prisme.postit.tag', string="Tags")
     days = fields.Many2many('prisme.postit.day', string="Days")
@@ -42,7 +43,13 @@ class PrismePostit(models.Model):
                                   'terminated', 'Termine'), ],
                              default='active')
 
+    active = fields.Boolean(default=True)
+
+    opportunity_count = fields.Integer("Opportunity",
+                                       compute='_compute_opportunity_count')
+
     def init(self):
+        # self.names_users = [self.assigned_to.name, self.assigned_by.name]
         self.env.cr.execute('DROP TRIGGER IF EXISTS postit_update ON '
                             'prisme_postit_assignedto_rel;')
 
@@ -182,32 +189,53 @@ class PrismePostit(models.Model):
     def _log(self, message):
         print(message)
 
-    def notificate_postit(self):
-        message_id = self.message_ids[-1]
-        mail_channel = self.env['mail.channel']
+    @api.model
+    def create(self, vals):
+        postit = super(PrismePostit, self).create(vals)
+        list_assigned_to = [item for item in postit.assigned_to if item]
+        list_copy_to = [item for item in postit.copy_to if item]
+        list_partners = set(list_assigned_to + list_copy_to)
 
-        list_assigned_to = [item for item in self.assigned_to if item]
-        list_copy_to = [item for item in self.copy_to if item]
+        postit.message_ids[-1].body = postit.description
+        ids = [i.partner_id.id for i in list_partners]
+        postit.message_subscribe(ids, [])
 
-        list_partners = set([self.assigned_by] + list_assigned_to +
-                            list_copy_to)
-        list_partners = [item for item in list_partners if item]
-        list_partners.sort()
-        channel_id = mail_channel.search(
-            [('channel_partner_ids', '=', [
-                item.partner_id.id for item in list_partners]),
-             ('name', '=', 'Postit %s' % ('/'.join(
-                 [item.name for item in list_partners])))])
-        channel_id = channel_id and channel_id[0]
-        values = {}
-        if not channel_id:
-            values['name'] = 'Postit %s' % \
-                             ('/'.join([item.name for item in list_partners]))
-            values['public'] = 'public'
+        message = self.env['mail.message'].create({
+            'subject': _('Invitation to follow %s: %s') % (
+                postit._name, postit._name),
+            'body': postit.description,
+            'record_name': postit._name,
+            'email_from': postit.env['mail.message']._get_default_from(),
+            'reply_to': postit.env['mail.message']._get_default_from(),
+            'model': postit._name,
+            'res_id': postit.id,
+            'no_auto_thread': True,
+        })
+        for item in ids:
+            post_vars = {'subject': 'Notification',
+                         'body': '#Postit - ' + postit.name + ' / ' +
+                                 postit.description,
+                         'partner_ids': [(4, item)],
+                         }
 
-            values['channel_partner_ids'] = [
-                (4, [item.partner_id.id for item in list_partners])]
-            channel_id = mail_channel.create(values)
+            self.env['mail.thread'].message_post(
+                type="notification", subtype="mt_comment", **post_vars)
 
-        message_id.channel_ids = [(6, 0, [channel_id.id])]
-        message_id._notify()
+        message.unlink()
+
+        return postit
+
+    def convert_to_lead(self):
+        self.env['crm.lead'].create({
+            'name': self.name,
+            'partner_id': self.partner_id.id,
+            'type': 'opportunity',
+        })
+
+    @api.multi
+    def _compute_opportunity_count(self):
+        for partner in self:
+            partner.opportunity_count = self.env['crm.lead'].search_count(
+                [('partner_id', '=', self.partner_id.id),
+                 ('name', '=', self.name),
+                 ('type', '=', 'opportunity')])
