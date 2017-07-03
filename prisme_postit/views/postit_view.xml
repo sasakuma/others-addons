@@ -13,9 +13,6 @@
                                 type="workflow"
                                 string="To do"
                                 states="terminated,in_process"/>
-                        <button name="notificate_postit"
-                                type="object"
-                                string="Notificate"/>
 
                         <button name="in_process"
                                 type="workflow"
@@ -30,6 +27,24 @@
 
                         <field name="state" widget="statusbar"/>
                     </header>
+                    <group>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object"
+                                    class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button"
+                                       options='{"terminology": "archive"}'/>
+                            </button>
+                            <button class="oe_stat_button o_res_partner_tip_opp"
+                                    type="action"
+                                    name="%(crm.crm_lead_opportunities)d"
+                                    icon="fa-star"
+                                    context="{'search_default_name': name}">
+                                <field string="Opportunities"
+                                       name="opportunity_count"
+                                       widget="statinfo"/>
+                            </button>
+                        </div>
+                    </group>
                     <group>
                         <field name="name"/>
                         <field name="tags" widget="many2many_tags"
@@ -46,8 +61,13 @@
                         <field name="priority" widget="priority"/>
                         <field name="date_start" readonly="1"/>
                         <field name="date_end" readonly="1"/>
-                        <field name="expected_date"/>expected_date
-
+                        <field name="expected_date"/>
+                    </group>
+                    <group>
+                        <button name="convert_to_lead"
+                                string="Convert to opportunity"
+                                type="object"
+                                class="oe_highlight"/>
                     </group>
                     <group>
                         <notebook>
@@ -157,7 +177,7 @@
                 </kanban>
             </field>
         </record>
-        
+
         <record model="ir.actions.act_window" id="action_prisme_postit">
             <field name="name">Postit</field>
             <field name="res_model">prisme.postit</field>
