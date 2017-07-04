@@ -48,6 +48,8 @@ class PrismePostit(models.Model):
     opportunity_count = fields.Integer("Opportunity",
                                        compute='_compute_opportunity_count')
 
+    crm_lead_id = fields.Many2one(comodel_name='crm.lead')
+
     def init(self):
         # self.names_users = [self.assigned_to.name, self.assigned_by.name]
         self.env.cr.execute('DROP TRIGGER IF EXISTS postit_update ON '
@@ -225,17 +227,17 @@ class PrismePostit(models.Model):
 
         return postit
 
-    def convert_to_lead(self):
-        self.env['crm.lead'].create({
-            'name': self.name,
-            'partner_id': self.partner_id.id,
-            'type': 'opportunity',
-        })
-
     @api.multi
     def _compute_opportunity_count(self):
-        for partner in self:
-            partner.opportunity_count = self.env['crm.lead'].search_count(
-                [('partner_id', '=', self.partner_id.id),
-                 ('name', '=', self.name),
-                 ('type', '=', 'opportunity')])
+        for postit in self:
+            postit.opportunity_count = self.env['crm.lead'].search_count(
+                [('postit_id', '=', postit.id)])
+
+    @api.multi
+    def redirect_crm_lead(self):
+        action = self.env['ir.actions.act_window'].for_xml_id(
+            'crm', 'crm_lead_opportunities')
+
+        action['domain'] = [('postit_id', '=', self.id)]
+
+        return action
