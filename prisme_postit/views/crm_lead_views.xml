@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="crm_case_form_view_oppor" model="ir.ui.view">
+        <field name="name">crm.case.form.view.oppor</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+        <field name="arch" type="xml">
+            <field name="tag_ids" position="before">
+                <field name="postit_id" invisible="1"/>
+            </field>
+            <xpath expr="//button[@name='action_schedule_meeting']"
+                   position="before">
+                <button class="oe_stat_button o_res_partner_tip_opp"
+                        type="object"
+                        name="redirect_postit"
+                        icon="fa-star">
+                    <field string="Postit"
+                           name="postit_count"
+                           widget="statinfo"/>
+                    <field name="id" invisible="1"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>
