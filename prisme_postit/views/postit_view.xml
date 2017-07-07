@@ -36,7 +36,7 @@
                         </button>
                         <button class="oe_stat_button o_res_partner_tip_opp"
                                 type="object"
-                                name="redirect_crm_lead"
+                                name="action_redirect_crm_lead"
                                 context="{'default_partner_id': partner_id,
                                           'default_postit_id': id,
                                           'search_default_postit_id': id,
@@ -45,28 +45,35 @@
                             <field string="Opportunities"
                                    name="opportunity_count"
                                    widget="statinfo"/>
-                            <field name="id" invisible="1"/>
                         </button>
                     </div>
                 </group>
+                <div class="oe_title">
+                    <label string="Name"/>
+                    <h1>
+                        <field name="name" placeholder="Postit Name"/>
+                    </h1>
+                </div>
                 <group>
-                    <field name="name"/>
-                    <field name="tags" widget="many2many_tags"
-                           placeholder="Tags..."/>
-                    <field name="assigned_to" widget="many2many_tags"
-                           placeholder="To..."/>
-                    <field name="copy_to" widget="many2many_tags"
-                           placeholder="To..."/>
-                    <field name="assigned_by" readonly="1"/>
-                    <field name="partner_id"/>
-                    <field name="days" widget="many2many_tags"
-                           placeholder="Days..."
-                           attrs="{'invisible': True}"/>
-                    <field name="priority" widget="priority"/>
-                    <field name="date_start" readonly="1"/>
-                    <field name="date_end" readonly="1"/>
-                    <field name="expected_date"/>
-                    <field name="crm_lead_id" invisible="1"/>
+                    <group>
+                        <field name="tags" widget="many2many_tags"
+                               placeholder="Tags..."/>
+                        <field name="assigned_to" widget="many2many_tags"
+                               placeholder="To..."/>
+                        <field name="copy_to" widget="many2many_tags"
+                               placeholder="To..."/>
+                        <field name="partner_id"/>
+                    </group>
+                    <group>
+                        <field name="days" widget="many2many_tags"
+                               placeholder="Days..."
+                               attrs="{'invisible': True}"/>
+                        <field name="priority" widget="priority"/>
+                        <field name="date_start" readonly="1"/>
+                        <field name="date_end" readonly="1"/>
+                        <field name="expected_date"/>
+                        <field name="assigned_by" readonly="1"/>
+                    </group>
                 </group>
                 <group>
                     <notebook>
@@ -74,6 +81,8 @@
                             <field name="description"/>
                         </page>
                     </notebook>
+                    <field name="lead_ids"
+                           invisible="1"/>
                 </group>
                 <div class="oe_chatter">
                     <field name="message_follower_ids"
