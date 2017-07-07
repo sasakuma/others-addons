@@ -48,7 +48,7 @@ class PrismePostit(models.Model):
     opportunity_count = fields.Integer("Opportunity",
                                        compute='_compute_opportunity_count')
 
-    crm_lead_id = fields.Many2one(comodel_name='crm.lead')
+    lead_ids = fields.Many2many(comodel_name='crm.lead')
 
     @api.model
     def action_in_process(self):
@@ -217,13 +217,14 @@ class PrismePostit(models.Model):
     def _compute_opportunity_count(self):
         for postit in self:
             postit.opportunity_count = self.env['crm.lead'].search_count(
-                [('postit_id', '=', postit.id)])
+                [('postit_ids', '=', postit.id)])
 
     @api.multi
-    def redirect_crm_lead(self):
+    def action_redirect_crm_lead(self):
         action = self.env['ir.actions.act_window'].for_xml_id(
             'crm', 'crm_lead_opportunities')
 
-        action['domain'] = [('postit_id', '=', self.id)]
-
+        action['domain'] = [('postit_ids', '=', self.id)]
+        action['context'] = {'default_postit_ids': self.ids,
+                             'default_partner_id': self.partner_id.id}
         return action
