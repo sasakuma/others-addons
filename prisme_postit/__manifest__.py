@@ -14,9 +14,11 @@
     ],
     'depends': [
         'mail',
+        'crm',
     ],
     'data': [
         'views/postit_view.xml',
+        'views/crm_lead_views.xml',
         'views/postit_workflow.xml',
 
     ],

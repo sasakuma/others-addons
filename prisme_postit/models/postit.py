@@ -48,28 +48,7 @@ class PrismePostit(models.Model):
     opportunity_count = fields.Integer("Opportunity",
                                        compute='_compute_opportunity_count')
 
-    def init(self):
-        # self.names_users = [self.assigned_to.name, self.assigned_by.name]
-        self.env.cr.execute('DROP TRIGGER IF EXISTS postit_update ON '
-                            'prisme_postit_assignedto_rel;')
-
-        sql = ("CREATE OR REPLACE FUNCTION postit_update() RETURNS trigger "
-               "AS $$ BEGIN IF pg_trigger_depth() <> 1 THEN RETURN NEW;"
-               "END IF; UPDATE prisme_postit SET names_users = "
-               "subquery.string_agg FROM "
-               "(SELECT ppar.prisme_postit_id,string_agg(partner.name, ', ') "
-               "FROM prisme_postit_assignedto_rel ppar JOIN res_users users ON"
-               " users.id=ppar.res_users_id JOIN res_partner partner ON "
-               "partner.id=users.partner_id GROUP BY ppar.prisme_postit_id) "
-               "AS subquery Where prisme_postit.id=subquery.prisme_postit_id; "
-               "RETURN NEW; END; $$ LANGUAGE plpgsql;")
-
-        self.env.cr.execute(sql)
-
-        self.env.cr.execute("CREATE TRIGGER postit_update AFTER INSERT OR "
-                            "UPDATE OR DELETE ON prisme_postit_assignedto_rel "
-                            "WHEN (pg_trigger_depth() < 1) EXECUTE PROCEDURE "
-                            "postit_update();")
+    lead_ids = fields.Many2many(comodel_name='crm.lead')
 
     @api.model
     def action_in_process(self):
@@ -196,6 +175,15 @@ class PrismePostit(models.Model):
         list_copy_to = [item for item in postit.copy_to if item]
         list_partners = set(list_assigned_to + list_copy_to)
 
+        # names_users
+        list_assigned_to_name = [item.name for item in postit.assigned_to if
+                                 item]
+        list_copy_to_name = [item.name for item in postit.copy_to if item]
+        list_partners_names = (list_assigned_to_name + list_copy_to_name)
+
+        postit.names_users = ', '.join(list_partners_names)
+        # final names_users
+
         postit.message_ids[-1].body = postit.description
         ids = [i.partner_id.id for i in list_partners]
         postit.message_subscribe(ids, [])
@@ -225,17 +213,18 @@ class PrismePostit(models.Model):
 
         return postit
 
-    def convert_to_lead(self):
-        self.env['crm.lead'].create({
-            'name': self.name,
-            'partner_id': self.partner_id.id,
-            'type': 'opportunity',
-        })
-
     @api.multi
     def _compute_opportunity_count(self):
-        for partner in self:
-            partner.opportunity_count = self.env['crm.lead'].search_count(
-                [('partner_id', '=', self.partner_id.id),
-                 ('name', '=', self.name),
-                 ('type', '=', 'opportunity')])
+        for postit in self:
+            postit.opportunity_count = self.env['crm.lead'].search_count(
+                [('postit_ids', '=', postit.id)])
+
+    @api.multi
+    def action_redirect_crm_lead(self):
+        action = self.env['ir.actions.act_window'].for_xml_id(
+            'crm', 'crm_lead_opportunities')
+
+        action['domain'] = [('postit_ids', '=', self.id)]
+        action['context'] = {'default_postit_ids': self.ids,
+                             'default_partner_id': self.partner_id.id}
+        return action
