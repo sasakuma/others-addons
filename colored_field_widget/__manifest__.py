@@ -18,6 +18,10 @@ A collection of custom widgets:
     'data': [
         "views/custom_widget.xml"
     ],
+    'depends': [
+        'base',
+        'web',
+    ],
     'qweb': [
         'static/src/xml/template_update.xml'
     ],
