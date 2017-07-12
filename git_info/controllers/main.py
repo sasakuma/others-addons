@@ -13,7 +13,6 @@ from odoo.addons.web_settings_dashboard.controllers.main \
 
 
 class GitInfoWebSettingsDashboard(WebSettingsDashboard):
-
     @http.route()
     def web_settings_dashboard_data(self, **kw):
         res = super(
