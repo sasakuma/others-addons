@@ -32,16 +32,19 @@ class PrismePostit(models.Model):
     priority = fields.Selection(string="Priority",
                                 selection=AVAILABLE_PRIORITIES,
                                 default='0',
-                                index=True)
+                                index=True,
+                                track_visibility='onchange')
     tags = fields.Many2many('prisme.postit.tag', string="Tags")
     days = fields.Many2many('prisme.postit.day', string="Days")
     date_start = fields.Date(string="Date start")
     date_end = fields.Date(string="Date end")
-    expected_date = fields.Date(string="Expected Date")
+    expected_date = fields.Date(string="Expected Date",
+                                track_visibility='onchange')
     state = fields.Selection([('active', 'Non termine'),
                               ('in_process', 'En cours'), (
                                   'terminated', 'Termine'), ],
-                             default='active')
+                             default='active',
+                             track_visibility='onchange')
 
     active = fields.Boolean(default=True)
 
