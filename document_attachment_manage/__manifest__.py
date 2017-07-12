@@ -8,7 +8,7 @@
     'website': "http://renjie.me",
     'license': 'LGPL-3',
     'category': 'Document Management',
-    'version': '1.1',
+    'version': '10.0.1.0.0',
     'depends': ['document'],
     'data': [
         'views/webclient_templates.xml',

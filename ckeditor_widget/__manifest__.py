@@ -18,7 +18,8 @@ Based on CKEditor 4.6 `Docs in CKEditor
     'website': "https://gilvanleal.github.io/odoowidgets/",
 
     # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
+    # Check https://github.com/odoo/odoo/blob/master/openerp/addons/
+    # base/module/module_data.xml
     # for the full list
     'category': 'Extra Tools',
     'version': '0.1',

@@ -1,4 +1,4 @@
-#-*- coding:utf-8 -*-
+# -*- coding:utf-8 -*-
 {
     'name': 'Custom colored widgets example',
     'version': '10.0.1.0.0',

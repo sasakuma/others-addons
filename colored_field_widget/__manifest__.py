@@ -16,10 +16,12 @@ A collection of custom widgets:
 - Colored ListView boolean field
         """,
     'data': [
-        "custom_widget.xml"
+        "views/custom_widget.xml"
     ],
     'qweb': [
         'static/src/xml/template_update.xml'
     ],
     'installable': True,
+    'auto_install': False,
+    'application': False,
 }
