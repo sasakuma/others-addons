@@ -16,7 +16,7 @@ class PrismePostit(models.Model):
     """ Post It data """
     _name = 'prisme.postit'
     _description = 'Postit'
-    _inherit = ['mail.thread']
+    _inherit = 'mail.thread'
 
     name = fields.Char(string="Name", required=True)
     names_users = fields.Char(string="Assigned to")
@@ -32,7 +32,7 @@ class PrismePostit(models.Model):
     priority = fields.Selection(string="Priority",
                                 selection=AVAILABLE_PRIORITIES,
                                 default='0',
-                                select=True)
+                                index=True)
     tags = fields.Many2many('prisme.postit.tag', string="Tags")
     days = fields.Many2many('prisme.postit.day', string="Days")
     date_start = fields.Date(string="Date start")
