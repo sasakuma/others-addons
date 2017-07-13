@@ -22,10 +22,10 @@
 
 {
     'name': 'Web ListView Row Count',
-    'version': '1.0',
+    'version': '10.0.1.0.0',
     'category': 'Tools',
-    'description': """ This module helps to identify row count of list view easily
-""",
+    'description': """ This module helps to identify row count of list view
+    easily """,
     'author': 'Amzsys',
     'website': 'http://amzsys.com',
     'summary': 'ListView Row Count',

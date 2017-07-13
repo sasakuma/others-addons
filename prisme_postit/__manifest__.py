@@ -9,6 +9,7 @@
     'category': 'Extra Tools',
     'summary': 'This Module creates a widget in navbar that links to postit '
                'views.',
+    'description': 'Controle de Tarefas',
     'contributors': [
         'Rodrigo Ferreira <rodrigosferreira91@gmail.com>',
     ],
@@ -20,28 +21,13 @@
         'views/postit_view.xml',
         'views/crm_lead_views.xml',
         'views/postit_workflow.xml',
-
-    ],
-    'demo': [
-
-    ],
-    'test': [
-    ],
-    'init_xml': [
         'data/init_scheduler.xml',
-
-    ],
-    'update_xml': [
         'security/ir.model.access.csv',
     ],
     'css': [
         'static/src/css/note.css',
     ],
-    'images': [
-    ],
     'installable': True,
     'application': True,
     'auto_install': False,
 }
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -2,7 +2,8 @@
 <odoo>
 	<template id="assets_common" inherit_id="web.assets_common">
 		<xpath expr="." position="inside">
-			<script type="text/javascript" src="/int_range_widget/static/src/js/views/form_widgets.js"></script>
+			<script type="text/javascript"
+					src="/int_range_widget/static/src/js/views/form_widgets.js"/>
 		</xpath>
 	</template>
 </odoo>

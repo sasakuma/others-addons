@@ -1,7 +1,7 @@
-#-*- coding:utf-8 -*-
+# -*- coding:utf-8 -*-
 {
     'name': 'Custom colored widgets example',
-    'version': '0.1',
+    'version': '10.0.1.0.0',
     'summary': 'Custom widget example',
     'category': 'Tools',
     'author': 'KIT-XXI',

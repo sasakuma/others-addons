@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 {
     'name': 'Custom colored widgets',
-    'version': '0.1',
+    'version': '10.0.1.0.0',
     'summary': 'Some custom widgets',
     'category': 'Tools',
     'author': 'KIT-XXI',
@@ -16,10 +16,16 @@ A collection of custom widgets:
 - Colored ListView boolean field
         """,
     'data': [
-        "custom_widget.xml"
+        "views/custom_widget.xml"
+    ],
+    'depends': [
+        'base',
+        'web',
     ],
     'qweb': [
         'static/src/xml/template_update.xml'
     ],
     'installable': True,
+    'auto_install': False,
+    'application': False,
 }
