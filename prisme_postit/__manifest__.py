@@ -9,7 +9,6 @@
     'category': 'Extra Tools',
     'summary': 'This Module creates a widget in navbar that links to postit '
                'views.',
-    'description': 'Controle de Tarefas',
     'contributors': [
         'Rodrigo Ferreira <rodrigosferreira91@gmail.com>',
     ],
