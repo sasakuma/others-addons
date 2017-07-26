@@ -28,6 +28,12 @@
                     <field name="state" widget="statusbar"/>
                 </header>
                 <group>
+                    <div class="oe_title">
+                        <label string="Name"/>
+                        <h1>
+                            <field name="name" placeholder="Postit Name"/>
+                        </h1>
+                    </div>
                     <div class="oe_button_box" name="button_box">
                         <button name="toggle_active" type="object"
                                 class="oe_stat_button" icon="fa-archive">
@@ -48,12 +54,7 @@
                         </button>
                     </div>
                 </group>
-                <div class="oe_title">
-                    <label string="Name"/>
-                    <h1>
-                        <field name="name" placeholder="Postit Name"/>
-                    </h1>
-                </div>
+
                 <group>
                     <group>
                         <field name="tags" widget="many2many_tags"
