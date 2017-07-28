@@ -37,6 +37,7 @@ class PrismePostit(models.Model):
     tags = fields.Many2many('prisme.postit.tag', string="Tags")
     days = fields.Many2many('prisme.postit.day', string="Days")
     date_start = fields.Date(string="Date start")
+    recall_date = fields.Date(string="Date Recall")
     date_end = fields.Date(string="Date end")
     expected_date = fields.Date(string="Expected Date",
                                 track_visibility='onchange')
