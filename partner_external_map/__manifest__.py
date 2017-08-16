@@ -14,7 +14,9 @@
               'Tecnativa, '
               'Odoo Community Association (OCA)',
     'website': 'http://www.akretion.com',
-    'depends': ['base'],
+    'depends': [
+        'br_base',
+    ],
     'data': [
         'views/res_partner_view.xml',
         'views/map_website_view.xml',
