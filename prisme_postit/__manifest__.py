@@ -2,7 +2,7 @@
 {
     'name': 'Postit',
     'version': '10.0.1.0.0',
-    'author': 'MultidadosTI',
+    'author': 'Prisme',
     'maintainer': 'MultidadosTI',
     'website': 'www.multidadosti.com.br',
     'license': 'LGPL-3',
@@ -10,15 +10,14 @@
     'summary': 'This Module creates a widget in navbar that links to postit '
                'views.',
     'contributors': [
+        'Michell Stuttgart <michellstut@gmail.com>',
         'Rodrigo Ferreira <rodrigosferreira91@gmail.com>',
     ],
     'depends': [
         'mail',
-        'crm',
     ],
     'data': [
         'views/postit_view.xml',
-        'views/crm_lead_views.xml',
         'views/postit_workflow.xml',
         'data/init_scheduler.xml',
         'security/ir.model.access.csv',
