@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+
     <record model="workflow" id="wkf_postit">
         <field name="name">Prisme postit workflow</field>
         <field name="osv">prisme.postit</field>
@@ -13,12 +14,14 @@
         <field name="kind">function</field>
         <field name="action">action_active()</field>
     </record>
+
     <record model="workflow.activity" id="in_process">
         <field name="name">In_process</field>
         <field name="wkf_id" ref="wkf_postit"/>
         <field name="kind">function</field>
         <field name="action">action_in_process()</field>
     </record>
+
     <record model="workflow.activity" id="terminated">
         <field name="name">Terminated</field>
         <field name="wkf_id" ref="wkf_postit"/>
@@ -31,24 +34,29 @@
         <field name="act_to" ref="in_process"/>
         <field name="signal">in_process</field>
     </record>
+
     <record model="workflow.transition" id="postit_in_process_to_in_process">
         <field name="act_from" ref="terminated"/>
         <field name="act_to" ref="in_process"/>
         <field name="signal">in_process</field>
     </record>
+
     <record model="workflow.transition" id="postit_in_process_to_terminated">
         <field name="act_from" ref="in_process"/>
         <field name="act_to" ref="terminated"/>
         <field name="signal">terminated</field>
     </record>
+
     <record model="workflow.transition" id="postit_terminated_to_active">
         <field name="act_from" ref="terminated"/>
         <field name="act_to" ref="active"/>
         <field name="signal">active</field>
     </record>
+
     <record model="workflow.transition" id="postit_in_process_to_active">
         <field name="act_from" ref="in_process"/>
         <field name="act_to" ref="active"/>
         <field name="signal">active</field>
     </record>
+
 </odoo>
