@@ -186,6 +186,28 @@
         <field name="search_view_id" ref="view_prisme_postit_search"/>
     </record>
 
+
+    <record model="ir.actions.act_window.view" id="action_postit_kanban_view_oppor11">
+        <field name="sequence" eval="0"/>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="view_prisme_postit_kanban"/>
+        <field name="act_window_id" ref="action_prisme_postit"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="action_postit_tree_view_oppor11">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_prisme_postit_tree"/>
+        <field name="act_window_id" ref="action_prisme_postit"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="action_postit_form_view_oppor11">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_prisme_postit_form"/>
+        <field name="act_window_id" ref="action_prisme_postit"/>
+    </record>
+
     <!-- prisme postit Tag Form View -->
     <record model="ir.ui.view" id="view_prisme_postit_tag_form">
         <field name="name">prisme.postit.tag.form</field>
