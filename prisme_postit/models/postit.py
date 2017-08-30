@@ -66,6 +66,8 @@ class PrismePostIt(models.Model):
 
     active = fields.Boolean(default=True)
 
+    color = fields.Integer('Color Index')
+
     @api.model
     def action_in_process(self):
         self.state = 'in_process'

@@ -18,22 +18,22 @@ msgstr ""
 #. module: prisme_postit
 #: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_kanban
 msgid "<strong>Assigned by:</strong>"
-msgstr "<strong>Assigned by:</strong>"
+msgstr "<strong>De:</strong>"
 
 #. module: prisme_postit
 #: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_kanban
 msgid "<strong>Assigned to:</strong>"
-msgstr "<strong>Assigned to:</strong>"
+msgstr "<strong>Para:</strong>"
 
 #. module: prisme_postit
 #: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_kanban
 msgid "<strong>Client:</strong>"
-msgstr "<strong>Client:</strong>"
+msgstr "<strong>Cliente:</strong>"
 
 #. module: prisme_postit
 #: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_kanban
 msgid "<strong>Priority:</strong>"
-msgstr "<strong>Priority:</strong>"
+msgstr "<strong>Prioridade:</strong>"
 
 #. module: prisme_postit
 #: model:ir.model.fields,field_description:prisme_postit.field_prisme_postit_active
@@ -277,7 +277,7 @@ msgstr "Postit Tarefa"
 #. module: prisme_postit
 #: model:ir.ui.view,arch_db:prisme_postit.view_prisme_postit_form
 msgid "Postit Name"
-msgstr "Postit Name"
+msgstr "Postit"
 
 #. module: prisme_postit
 #: model:ir.actions.act_window,name:prisme_postit.action_prisme_postit_tag
