@@ -217,7 +217,7 @@ class PrismePostIt(models.Model):
 
         for item in ids:
             post_vars = {
-                'subject': 'Notification',
+                'subject': u'Nova postit atribuído a você',
                 'body': '#Postit - %s / %s' % (postit.name, postit.description),  # noqa: 501
                 'partner_ids': [(4, item)],
                 'message_type': 'notification',
