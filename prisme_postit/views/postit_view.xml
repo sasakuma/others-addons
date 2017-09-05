@@ -134,9 +134,30 @@
                     default_order="state">
                 <field name="name"/>
                 <field name="state"/>
+                <field name="color"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                            <div class="o_dropdown_kanban dropdown">
+                                <a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+                                    <span class="fa fa-cog"/>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                    <t t-if="widget.editable">
+                                        <li>
+                                            <a type="edit">Edit</a>
+                                        </li>
+                                    </t>
+                                    <t t-if="widget.deletable">
+                                        <li>
+                                            <a type="delete">Delete</a>
+                                        </li>
+                                    </t>
+                                    <li>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </li>
+                                </ul>
+                            </div>
                             <div class="oe_kanban_content">
                                 <div>
                                     <h4>
@@ -147,19 +168,19 @@
                                 </div>
                                 <div>
                                     <p>
-                                        <strong>Assigned to:</strong>
+                                        <strong>Para:</strong>
                                         <field name="names_users"/>
                                     </p>
                                     <p>
-                                        <strong>Assigned by:</strong>
+                                        <strong>De:</strong>
                                         <field name="assigned_by"/>
                                     </p>
                                     <p>
-                                        <strong>Client:</strong>
+                                        <strong>Cliente:</strong>
                                         <field name="partner_id"/>
                                     </p>
                                     <p>
-                                        <strong>Priority:</strong>
+                                        <strong>Prioridade:</strong>
                                         <field name="priority"/>
                                     </p>
                                     <span class="oe_kanban_list_many2many">
