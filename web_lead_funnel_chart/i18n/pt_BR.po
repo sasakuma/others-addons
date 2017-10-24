@@ -1,0 +1,47 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* web_lead_funnel_chart
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-09 20:14+0000\n"
+"PO-Revision-Date: 2017-10-09 17:19-0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: pt_BR\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: web_lead_funnel_chart
+#: model:ir.ui.menu,name:web_lead_funnel_chart.FunnelChart
+msgid "Funnel Chart"
+msgstr "Gráfico de Funil"
+
+#. module: web_lead_funnel_chart
+#: model:ir.actions.client,name:web_lead_funnel_chart.action_funnel_chart
+msgid "Lead Funnel Chart"
+msgstr "Gráfico Funil de Oportunidades"
+
+#. module: web_lead_funnel_chart
+#: model:ir.model,name:web_lead_funnel_chart.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Prospecção/Oportunidade"
+
+#. module: web_lead_funnel_chart
+#. openerp-web
+#: code:addons/web_lead_funnel_chart/static/src/js/web_lead_funnel_chart.js:25
+#, python-format
+msgid "Lead/Opportunity Funnel Chart"
+msgstr "Gráfico Funil de Oportunidades"
+
+#. module: web_lead_funnel_chart
+#. openerp-web
+#: code:addons/web_lead_funnel_chart/static/src/js/web_lead_funnel_chart.js:48
+#, python-format
+msgid "Number Of Leads"
+msgstr "Número de Oportunidades"
