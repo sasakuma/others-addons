@@ -1,0 +1,194 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* tko_partner_multiple_phones
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-25 14:15+0000\n"
+"PO-Revision-Date: 2017-09-25 11:21-0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: pt_BR\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: tko_partner_multiple_phones
+#: selection:partner.phone.state,status:0
+msgid "Active"
+msgstr "Ativo"
+
+#. module: tko_partner_multiple_phones
+#: selection:partner.phone.type,type:0
+msgid "Celular"
+msgstr "Celular"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_number_country_id
+msgid "Country"
+msgstr "País"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_number_create_uid
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_state_create_uid
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_type_create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_number_create_date
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_state_create_date
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_type_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_number_display_name
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_state_display_name
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_type_display_name
+msgid "Display Name"
+msgstr "Nome para Exibição"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_number_id
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_state_id
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_type_id
+msgid "ID"
+msgstr "Identificação"
+
+#. module: tko_partner_multiple_phones
+#: selection:partner.phone.state,status:0
+msgid "Inactive"
+msgstr "Inativo"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_number_is_main
+msgid "Is Main"
+msgstr "Principal"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_number___last_update
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_state___last_update
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_type___last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_number_write_uid
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_state_write_uid
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_type_write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_number_write_date
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_state_write_date
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_type_write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model.fields,help:tko_partner_multiple_phones.field_partner_phone_number_is_main
+msgid "Main Phone/Celular"
+msgstr "Telefone/Celular Principal"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.ui.view,arch_db:tko_partner_multiple_phones.res_partner_inherited_form
+msgid "Make it main"
+msgstr "Torná-lo Principal"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_state_name
+msgid "Name"
+msgstr "Nome"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_number_number
+msgid "Number"
+msgstr "Número"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model,name:tko_partner_multiple_phones.model_res_partner
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_number_partner_id
+msgid "Partner"
+msgstr "Parceiro"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.ui.view,arch_db:tko_partner_multiple_phones.partner_search_inherit
+msgid "Phone / Celular"
+msgstr "Telefone / Celular"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.actions.act_window,name:tko_partner_multiple_phones.partner_phone_status_action
+#: model:ir.ui.menu,name:tko_partner_multiple_phones.phone_status_menu
+#: model:ir.ui.view,arch_db:tko_partner_multiple_phones.res_partner_phone_status_form
+#: model:ir.ui.view,arch_db:tko_partner_multiple_phones.res_partner_phone_status_tree
+msgid "Phone Status"
+msgstr "Status Telefone"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.actions.act_window,name:tko_partner_multiple_phones.res_partner_phone_type_menu
+#: model:ir.ui.menu,name:tko_partner_multiple_phones.phone_type_menu
+#: model:ir.ui.view,arch_db:tko_partner_multiple_phones.res_partner_phone_type_form
+#: model:ir.ui.view,arch_db:tko_partner_multiple_phones.res_partner_phone_type_tree
+msgid "Phone Type"
+msgstr "Tipo de Telefone"
+
+#. module: tko_partner_multiple_phones
+#: sql_constraint:partner.phone.number:0
+msgid "Phone number should be unique !"
+msgstr "Número do telefone deve ser único !"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model,name:tko_partner_multiple_phones.model_partner_phone_type
+msgid "Phone type"
+msgstr "Tipo de Telefone"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_res_partner_partner_phone_ids
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_res_users_partner_phone_ids
+#: model:ir.ui.view,arch_db:tko_partner_multiple_phones.res_partner_inherited_form
+#: model:ir.ui.view,arch_db:tko_partner_multiple_phones.res_partner_phone_tree
+msgid "Phones"
+msgstr "Telefones"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_number_state_id
+msgid "State"
+msgstr "Estado"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_number_status
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_state_status
+msgid "Status"
+msgstr "Situação"
+
+#. module: tko_partner_multiple_phones
+#: selection:partner.phone.type,type:0
+msgid "Telefone"
+msgstr "Telefone"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_number_type_id
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_type_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model.fields,field_description:tko_partner_multiple_phones.field_partner_phone_type_name
+msgid "name"
+msgstr "Nome"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model,name:tko_partner_multiple_phones.model_partner_phone_number
+msgid "partner phone numbers"
+msgstr "Lista de telefones"
+
+#. module: tko_partner_multiple_phones
+#: model:ir.model,name:tko_partner_multiple_phones.model_partner_phone_state
+msgid "partner.phone.state"
+msgstr "partner.phone.state"

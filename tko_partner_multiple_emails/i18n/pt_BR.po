@@ -1,0 +1,112 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* tko_partner_multiple_emails
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-25 14:24+0000\n"
+"PO-Revision-Date: 2017-09-25 11:56-0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: pt_BR\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: tko_partner_multiple_emails
+#: selection:res.partner.email,mail_type:0
+msgid "Boleto"
+msgstr "Boleto"
+
+#. module: tko_partner_multiple_emails
+#: model:ir.model.fields,field_description:tko_partner_multiple_emails.field_res_partner_email_create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: tko_partner_multiple_emails
+#: model:ir.model.fields,field_description:tko_partner_multiple_emails.field_res_partner_email_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: tko_partner_multiple_emails
+#: model:ir.model.fields,field_description:tko_partner_multiple_emails.field_res_partner_email_display_name
+msgid "Display Name"
+msgstr "Nome para Exibição"
+
+#. module: tko_partner_multiple_emails
+#: model:ir.model.fields,field_description:tko_partner_multiple_emails.field_res_partner_email_email
+#: model:ir.ui.view,arch_db:tko_partner_multiple_emails.partner_search_inherit
+msgid "Email"
+msgstr "E-mail"
+
+#. module: tko_partner_multiple_emails
+#: model:ir.model.fields,field_description:tko_partner_multiple_emails.field_res_partner_email_ids
+#: model:ir.model.fields,field_description:tko_partner_multiple_emails.field_res_users_email_ids
+#: model:ir.ui.view,arch_db:tko_partner_multiple_emails.res_partner_inherited_form
+msgid "Emails"
+msgstr "E-mails"
+
+#. module: tko_partner_multiple_emails
+#: model:ir.model.fields,field_description:tko_partner_multiple_emails.field_res_partner_email_id
+msgid "ID"
+msgstr "Identificação"
+
+#. module: tko_partner_multiple_emails
+#: model:ir.model.fields,field_description:tko_partner_multiple_emails.field_res_partner_email_is_main
+msgid "Is Main"
+msgstr "Principal"
+
+#. module: tko_partner_multiple_emails
+#: model:ir.model.fields,field_description:tko_partner_multiple_emails.field_res_partner_email___last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: tko_partner_multiple_emails
+#: model:ir.model.fields,field_description:tko_partner_multiple_emails.field_res_partner_email_write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: tko_partner_multiple_emails
+#: model:ir.model.fields,field_description:tko_partner_multiple_emails.field_res_partner_email_write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: tko_partner_multiple_emails
+#: model:ir.model.fields,help:tko_partner_multiple_emails.field_res_partner_email_is_main
+msgid "Main /Celular"
+msgstr "Principal /Celular"
+
+#. module: tko_partner_multiple_emails
+#: model:ir.ui.view,arch_db:tko_partner_multiple_emails.res_partner_inherited_form
+msgid "Make it main"
+msgstr "Torná-lo Principal"
+
+#. module: tko_partner_multiple_emails
+#: selection:res.partner.email,mail_type:0
+msgid "Nota Fiscal"
+msgstr "Nota Fiscal"
+
+#. module: tko_partner_multiple_emails
+#: selection:res.partner.email,mail_type:0
+msgid "Nota Fiscal/Boleto"
+msgstr "Nota Fiscal/Boleto"
+
+#. module: tko_partner_multiple_emails
+#: model:ir.model,name:tko_partner_multiple_emails.model_res_partner
+#: model:ir.model.fields,field_description:tko_partner_multiple_emails.field_res_partner_email_partner_id
+msgid "Partner"
+msgstr "Parceiro"
+
+#. module: tko_partner_multiple_emails
+#: model:ir.model.fields,field_description:tko_partner_multiple_emails.field_res_partner_email_mail_type
+msgid "Tipo"
+msgstr "Tipo"
+
+#. module: tko_partner_multiple_emails
+#: model:ir.model,name:tko_partner_multiple_emails.model_res_partner_email
+msgid "res.partner.email"
+msgstr "res.partner.email"
