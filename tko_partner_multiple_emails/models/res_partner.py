@@ -40,9 +40,11 @@ class ResPartnerEmail(models.Model):
     partner_id = fields.Many2one('res.partner', u'Partner')
     is_main = fields.Boolean('Is Main', help="Main /Celular", default=False)
     mail_type = fields.Selection(string='Tipo',
-                                 selection=[('invoice', 'Nota Fiscal'),
-                                            ('billet', 'Boleto'),
-                                            ('invoice-billet', 'Nota Fiscal/Boleto'),
+                                 selection=[('invoice', u'Nota Fiscal'),
+                                            ('billet', u'Boleto'),
+                                            ('invoice-billet', u'Nota Fiscal/Boleto'),
+                                            ('notify-invoice', u'Notificação de Nota Fiscal'),
+                                            ('notify-billet', u'Notificação de Boleto'),
                                             ],
                                  required=True)
 
