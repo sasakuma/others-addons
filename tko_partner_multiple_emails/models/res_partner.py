@@ -36,3 +36,15 @@ class ResPartner(models.Model):
     email_ids = fields.One2many('res.partner.email',
                                 'partner_id',
                                 string=u'Emails')
+
+    @api.multi
+    def get_email_list(self, types=[]):
+        """Verifica emails no cadastro do partner e retorna uma string contendo
+         os emails do tipo especificado em types.
+
+        :param types: lista dos tipos de emails que deseja serem retornados
+        :return: string com emails do tipo definido em types separados por ','
+        """
+        emails = self.email_ids.filtered(lambda r: r.mail_type in types)
+        emails = emails.mapped('email')
+        return ','.join(emails)
