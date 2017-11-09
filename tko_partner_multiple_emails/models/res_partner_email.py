@@ -22,7 +22,6 @@
 #
 ##############################################################################
 
-
 from odoo import api, fields, models
 
 import logging
@@ -30,9 +29,38 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
-class ResPartner(models.Model):
-    _inherit = 'res.partner'
+class ResPartnerEmail(models.Model):
+    _name = 'res.partner.email'
+    _rec_name = 'email'
 
-    email_ids = fields.One2many('res.partner.email',
-                                'partner_id',
-                                string=u'Emails')
+    MAIL_TYPE = [
+        ('invoice', u'Nota Fiscal'),
+        ('billet', u'Boleto'),
+        ('invoice-billet', u'Nota Fiscal/Boleto'),
+        ('notify-invoice', u'Notificação de Nota Fiscal'),
+        ('notify-billet', u'Notificação de Boleto'),
+    ]
+
+    email = fields.Char('Email')
+    partner_id = fields.Many2one('res.partner', u'Partner')
+    is_main = fields.Boolean('Is Main', help="Main /Celular", default=False)
+    mail_type = fields.Selection(string='Tipo',
+                                 selection=MAIL_TYPE,
+                                 required=True)
+
+    @api.multi
+    def set_main_email(self):
+        for record in self:
+            email_ids = self.search(
+                [('partner_id', '=', record.partner_id.id)])
+            email_ids.write({'is_main': False})
+            vals = {
+                'is_main': 't',
+                'email': record.email,
+            }
+            record.partner_id.write(vals)
+
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'reload',
+        }
