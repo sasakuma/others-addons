@@ -22,7 +22,6 @@
 #
 ##############################################################################
 
-
 from odoo import api, fields, models
 
 import logging
@@ -30,21 +29,38 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
-class ResPartner(models.Model):
-    _inherit = 'res.partner'
+class ResPartnerEmail(models.Model):
+    _name = 'res.partner.email'
+    _rec_name = 'email'
 
-    email_ids = fields.One2many('res.partner.email',
-                                'partner_id',
-                                string=u'Emails')
+    MAIL_TYPE = [
+        ('invoice', u'Nota Fiscal'),
+        ('billet', u'Boleto'),
+        ('invoice-billet', u'Nota Fiscal/Boleto'),
+        ('notify-invoice', u'Notificação de Nota Fiscal'),
+        ('notify-billet', u'Notificação de Boleto'),
+    ]
+
+    email = fields.Char('Email')
+    partner_id = fields.Many2one('res.partner', u'Partner')
+    is_main = fields.Boolean('Is Main', help="Main /Celular", default=False)
+    mail_type = fields.Selection(string='Tipo',
+                                 selection=MAIL_TYPE,
+                                 required=True)
 
     @api.multi
-    def get_email_list(self, types=[]):
-        """Verifica emails no cadastro do partner e retorna uma string contendo
-         os emails do tipo especificado em types.
+    def set_main_email(self):
+        for record in self:
+            email_ids = self.search(
+                [('partner_id', '=', record.partner_id.id)])
+            email_ids.write({'is_main': False})
+            vals = {
+                'is_main': 't',
+                'email': record.email,
+            }
+            record.partner_id.write(vals)
 
-        :param types: lista dos tipos de emails que deseja serem retornados
-        :return: string com emails do tipo definido em types separados por ','
-        """
-        emails = self.email_ids.filtered(lambda r: r.mail_type in types)
-        emails = emails.mapped('email')
-        return ','.join(emails)
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'reload',
+        }
