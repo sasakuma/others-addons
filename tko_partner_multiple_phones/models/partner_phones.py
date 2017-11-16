@@ -66,7 +66,7 @@ class PartnerPhoneNumber(models.Model):
 
     _sql_constraints = [
         ('unique_phone_no',
-         'unique(_partner_id,number)',
+         'unique(partner_id,number)',
          "Phone number should be unique !"),
     ]
     _constraints = []
