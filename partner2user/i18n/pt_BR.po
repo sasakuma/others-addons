@@ -1,0 +1,130 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner2user
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-03 16:20+0000\n"
+"PO-Revision-Date: 2018-01-03 14:21-0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: pt_BR\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: partner2user
+#: model:ir.model.fields,field_description:partner2user.field_user_datas_role_id
+msgid "Access Rule"
+msgstr "Regra de Acesso"
+
+#. module: partner2user
+#: model:ir.ui.view,arch_db:partner2user.wizar_user_view_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: partner2user
+#: model:ir.ui.view,arch_db:partner2user.wizar_user_view_form
+msgid "Create Login"
+msgstr "Criar Login"
+
+#. module: partner2user
+#: model:ir.actions.act_window,name:partner2user.act_createa_user_partner
+msgid "Create User"
+msgstr "Criar Usuário"
+
+#. module: partner2user
+#: model:ir.ui.view,arch_db:partner2user.res_partner
+msgid "Create login"
+msgstr "Criar login"
+
+#. module: partner2user
+#: model:ir.model,name:partner2user.model_partner_user
+msgid "Create login from partner"
+msgstr "Criar login para parceiro"
+
+#. module: partner2user
+#: model:ir.model.fields,field_description:partner2user.field_partner_user_create_uid
+#: model:ir.model.fields,field_description:partner2user.field_user_datas_create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: partner2user
+#: model:ir.model.fields,field_description:partner2user.field_partner_user_create_date
+#: model:ir.model.fields,field_description:partner2user.field_user_datas_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: partner2user
+#: model:ir.model.fields,field_description:partner2user.field_partner_user_display_name
+#: model:ir.model.fields,field_description:partner2user.field_user_datas_display_name
+msgid "Display Name"
+msgstr "Nome para Exibição"
+
+#. module: partner2user
+#: model:ir.model.fields,field_description:partner2user.field_user_datas_groups_id
+msgid "Groups"
+msgstr "Grupos"
+
+#. module: partner2user
+#: model:ir.model.fields,field_description:partner2user.field_partner_user_id
+#: model:ir.model.fields,field_description:partner2user.field_user_datas_id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner2user
+#: model:ir.model.fields,field_description:partner2user.field_user_datas_action_id
+msgid "Initial Action"
+msgstr "Ação Inicial"
+
+#. module: partner2user
+#: model:ir.model.fields,field_description:partner2user.field_partner_user___last_update
+#: model:ir.model.fields,field_description:partner2user.field_user_datas___last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: partner2user
+#: model:ir.model.fields,field_description:partner2user.field_partner_user_write_uid
+#: model:ir.model.fields,field_description:partner2user.field_user_datas_write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: partner2user
+#: model:ir.model.fields,field_description:partner2user.field_partner_user_write_date
+#: model:ir.model.fields,field_description:partner2user.field_user_datas_write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: partner2user
+#: model:ir.model.fields,field_description:partner2user.field_user_datas_login
+msgid "Login"
+msgstr "Autenticação"
+
+#. module: partner2user
+#: model:ir.model.fields,field_description:partner2user.field_user_datas_partner_id
+msgid "Partner"
+msgstr "Parceiro"
+
+#. module: partner2user
+#: model:ir.model.fields,field_description:partner2user.field_user_datas_password
+msgid "Password"
+msgstr "Senha"
+
+#. module: partner2user
+#: model:ir.model.fields,field_description:partner2user.field_user_datas_rel_id
+msgid "Rel id"
+msgstr "Rel id"
+
+#. module: partner2user
+#: model:ir.model.fields,field_description:partner2user.field_partner_user_user_data
+msgid "User data"
+msgstr "Dados do Usuário"
+
+#. module: partner2user
+#: model:ir.model,name:partner2user.model_user_datas
+msgid "user.datas"
+msgstr "user.datas"
