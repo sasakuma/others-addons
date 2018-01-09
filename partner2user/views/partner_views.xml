@@ -6,11 +6,15 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="show_create_user" invisible="1"/>
+                </field>
                 <xpath expr="//form/sheet" position="before">
                     <header>
                         <button string="Create login" name="%(partner2user.act_create_user_partner)d" type="action"
                                 class="oe_highlight"
-                                attrs="{'invisible': [('is_company', '=', True)]}"/>
+                                attrs="{'invisible': ['|',('is_company', '=', True),
+                                ('show_create_user','=', False)]}"/>
                     </header>
                 </xpath>
             </field>
