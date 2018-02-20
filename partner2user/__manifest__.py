@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
 {
     'name': "Partner to User",
-    'version':'1.0',
+    'version':'11.0.1.0.0',
     'summary': """
         Create a Login/User from a partner""",
 
@@ -12,13 +11,11 @@
     'author': "KABEER KB",
     'website': "",
     'category': 'base',
-    'version': '0.1',
     #'price':8,
     #'currency':'EUR',
 
     # any module necessary for this one to work correctly
     'depends': [
-        'base',
         'base_user_role',
     ],
 
@@ -32,5 +29,8 @@
     'demo': [
 
     ],
-    'installable': False,
+    'installable': True,
+    'auto_install': False,
+    'application': False,
+
 }

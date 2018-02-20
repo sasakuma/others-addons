@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import time
 from odoo import api, models
 
@@ -66,4 +64,3 @@ class ResUsersRole(models.Model):
                     readjusted_dict[field] = [(6, 0, many2many_lines)]
 
             return readjusted_dict
-
