@@ -22,6 +22,6 @@
         'static/src/xml/*.xml',
     ],
     'images': ['static/description/funnel.jpg'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
 }

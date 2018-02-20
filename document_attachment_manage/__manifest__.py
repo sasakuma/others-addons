@@ -19,7 +19,7 @@
     'images': [
         'static/description/main_screenshot.png',
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': True,
 }

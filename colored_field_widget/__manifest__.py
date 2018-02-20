@@ -25,7 +25,7 @@ A collection of custom widgets:
     'qweb': [
         'static/src/xml/template_update.xml'
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }

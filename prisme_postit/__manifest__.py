@@ -25,7 +25,7 @@
     'css': [
         'static/src/css/note.css',
     ],
-    'installable': True,
+    'installable': False,
     'application': True,
     'auto_install': False,
 }
