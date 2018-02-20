@@ -2,7 +2,7 @@ language: python
 dist: precise
 
 python:
-  - "2.7"
+  - "3.5"
 
 cache: pip
 
@@ -24,8 +24,6 @@ env:
   - TESTS="1" ODOO_REPO="multidadosti-erp/odoo"
   - TESTS="1" ODOO_REPO="multidadosti-erp/odoo" UNIT_TEST="1"
 
-virtualenv:
-  system_site_packages: true
 
 install:
   - git clone --depth=1 https://github.com/multidadosti-erp/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
