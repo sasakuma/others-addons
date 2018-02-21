@@ -8,73 +8,53 @@
         <field name="arch" type="xml">
             <form string="Postit" version="7.0">
                 <header>
-                    <button name="active"
-                            type="workflow"
-                            string="To do"
-                            states="terminated,in_process"/>
-
-                    <button name="in_process"
-                            type="workflow"
-                            string="In process"
-                            states="active"/>
-
-                    <button name="terminated"
-                            type="workflow"
-                            string="Close"
-                            states="in_process"
-                            class="oe_highlight"/>
-
+                    <button name="action_postit_active" type="object" string="To do" states="terminated,in_process"/>
+                    <button name="action_postit_in_process" type="object" string="In process" states="active,terminated"/>
+                    <button name="action_postit_close" type="object" string="Close" states="in_process" class="oe_highlight"/>
                     <field name="state" widget="statusbar"/>
                 </header>
-                <group>
-                    <div class="oe_title">
-                        <label string="Name"/>
-                        <h1>
-                            <field name="name" placeholder="Postit Name"/>
-                        </h1>
-                    </div>
-                    <div class="oe_button_box" name="button_box">
-                        <button name="toggle_active" type="object"
-                                class="oe_stat_button" icon="fa-archive">
-                            <field name="active" widget="boolean_button"
-                                   options='{"terminology": "archive"}'/>
-                        </button>
-                    </div>
-                </group>
-
-                <group>
+                <sheet>
                     <group>
-                        <field name="tags" widget="many2many_tags"
-                               placeholder="Tags..."/>
-                        <field name="assigned_to" widget="many2many_tags"
-                               placeholder="To..."/>
-                        <field name="copy_to" widget="many2many_tags"
-                               placeholder="To..."/>
-                        <field name="partner_id"/>
+                        <div class="oe_title">
+                            <label string="Name"/>
+                            <h1>
+                                <field name="name" placeholder="Postit Name"/>
+                            </h1>
+                        </div>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                            </button>
+                        </div>
                     </group>
                     <group>
-                        <field name="days" widget="many2many_tags"
-                               placeholder="Days..."
-                               attrs="{'invisible': True}"/>
-                        <field name="priority" widget="priority"/>
-                        <field name="date_start" readonly="1"/>
-                        <field name="date_end" readonly="1"/>
-                        <field name="expected_date"/>
-                        <field name="assigned_by" readonly="1"/>
+                        <group>
+                            <field name="tags" widget="many2many_tags" placeholder="Tags..."/>
+                            <field name="assigned_to" widget="many2many_tags" placeholder="To..."/>
+                            <field name="copy_to" widget="many2many_tags" placeholder="To..."/>
+                            <field name="partner_id"/>
+                        </group>
+                        <group>
+                            <field name="days" widget="many2many_tags" placeholder="Days..." attrs="{'invisible': True}"/>
+                            <field name="priority" widget="priority"/>
+                            <field name="date_start" readonly="1"/>
+                            <field name="date_end" readonly="1"/>
+                            <field name="expected_date"/>
+                            <field name="assigned_by" readonly="1"/>
+                        </group>
                     </group>
-                </group>
-                <group>
-                    <notebook>
-                        <page string="Description">
-                            <field name="description" widget="html"/>
-                        </page>
-                    </notebook>
-                </group>
-                <div class="oe_chatter">
-                    <field name="message_follower_ids"
-                           widget="mail_followers"/>
-                    <field name="message_ids" widget="mail_thread"/>
-                </div>
+                    <group>
+                        <notebook>
+                            <page string="Description">
+                                <field name="description" widget="html"/>
+                            </page>
+                        </notebook>
+                    </group>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </sheet>
             </form>
         </field>
     </record>
@@ -97,7 +77,6 @@
             </tree>
         </field>
     </record>
-
     <!-- Postit Tag Search View -->
     <record model="ir.ui.view" id="view_prisme_postit_search">
         <field name="name">prisme.postit.tree</field>
@@ -109,29 +88,21 @@
                 <field name="name"/>
                 <field name="partner_id"/>
                 <group expand="0" string="Group By">
-                    <filter string="Assigned to" domain="[]"
-                            context="{'group_by':'names_users'}"/>
-                    <filter string="Assigned by" domain="[]"
-                            context="{'group_by':'assigned_by'}"/>
-                    <filter string="Client" domain="[]"
-                            context="{'group_by':'partner_id'}"/>
-                    <filter name='state_active'
-                            string="State Active" domain="[('state', '!=', 'terminated')]"/>
-                    <filter name='state'
-                            string="State" domain="[]"
-                            context="{'group_by':'state'}"/>
+                    <filter string="Assigned to" domain="[]" context="{'group_by':'names_users'}"/>
+                    <filter string="Assigned by" domain="[]" context="{'group_by':'assigned_by'}"/>
+                    <filter string="Client" domain="[]" context="{'group_by':'partner_id'}"/>
+                    <filter name='state_active' string="State Active" domain="[('state', '!=', 'terminated')]"/>
+                    <filter name='state' string="State" domain="[]" context="{'group_by':'state'}"/>
                 </group>
             </search>
         </field>
     </record>
-
     <!-- Postit postit Kanban View-->
     <record model="ir.ui.view" id="view_prisme_postit_kanban">
         <field name="name">prisme.postit.kanban</field>
         <field name="model">prisme.postit</field>
         <field name="arch" type="xml">
-            <kanban default_group_by="state" class="oe_kanban_color_X"
-                    default_order="state">
+            <kanban default_group_by="state" class="oe_kanban_color_X" default_order="state">
                 <field name="name"/>
                 <field name="state"/>
                 <field name="color"/>
@@ -188,47 +159,38 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="oe_clear"/>
-                        </div>
+                            <div class="oe_clear"/></div>
                     </t>
                 </templates>
             </kanban>
         </field>
     </record>
-
     <record model="ir.actions.act_window" id="action_prisme_postit">
         <field name="name">Postit</field>
         <field name="res_model">prisme.postit</field>
         <field name="view_mode">tree,form,kanban,calendar</field>
-        <field name="domain">['|','|',('assigned_by', '=', uid),
-            ('copy_to', '=', uid),('assigned_to', '=', uid)]
-        </field>
+        <field name="domain">['|','|',('assigned_by', '=', uid),            ('copy_to', '=', uid),('assigned_to', '=', uid)]        </field>
         <field name="context">{'search_default_state_active':1}</field>
         <field name="search_view_id" ref="view_prisme_postit_search"/>
     </record>
-
-
     <record model="ir.actions.act_window.view" id="action_postit_kanban_view_oppor11">
         <field name="sequence" eval="0"/>
         <field name="view_mode">kanban</field>
         <field name="view_id" ref="view_prisme_postit_kanban"/>
         <field name="act_window_id" ref="action_prisme_postit"/>
     </record>
-
     <record model="ir.actions.act_window.view" id="action_postit_tree_view_oppor11">
         <field name="sequence" eval="1"/>
         <field name="view_mode">tree</field>
         <field name="view_id" ref="view_prisme_postit_tree"/>
         <field name="act_window_id" ref="action_prisme_postit"/>
     </record>
-
     <record model="ir.actions.act_window.view" id="action_postit_form_view_oppor11">
         <field name="sequence" eval="2"/>
         <field name="view_mode">form</field>
         <field name="view_id" ref="view_prisme_postit_form"/>
         <field name="act_window_id" ref="action_prisme_postit"/>
     </record>
-
     <!-- prisme postit Tag Form View -->
     <record model="ir.ui.view" id="view_prisme_postit_tag_form">
         <field name="name">prisme.postit.tag.form</field>
@@ -242,7 +204,6 @@
             </form>
         </field>
     </record>
-
     <!-- note Stage Tree View -->
     <record model="ir.ui.view" id="view_prisme_postit_tag_tree">
         <field name="name">prisme.postit.tag.tree</field>
@@ -255,7 +216,6 @@
             </tree>
         </field>
     </record>
-
     <!-- Postit Tag Search View -->
     <record model="ir.ui.view" id="view_prisme_postit_tag_search">
         <field name="name">prisme.postit.tag.search</field>
@@ -266,7 +226,6 @@
             </search>
         </field>
     </record>
-
     <!-- Prisme postit tag -->
     <record model="ir.actions.act_window" id="action_prisme_postit_tag">
         <field name="name">Postit Tag</field>
@@ -274,51 +233,35 @@
         <field name="view_mode">tree,form</field>
         <field name="search_view_id" ref="view_prisme_postit_tag_search"/>
     </record>
-
-    <menuitem name="Postit" id="menu_prisme_postit_base" sequence="150"
-              web_icon="prisme_postit,static/description/icon_postit.png"/>
-
-    <menuitem name="PostIt" id="menu_prisme_postit"
-              parent="menu_prisme_postit_base" sequence="22"
-              action="action_prisme_postit"/>
-
-    <menuitem name="PostIt Tag" id="menu_prisme_postit_tag"
-              parent="menu_prisme_postit_base" sequence="23"
-              action="action_prisme_postit_tag"/>
-
+    <menuitem name="Postit" id="menu_prisme_postit_base" sequence="150" web_icon="prisme_postit,static/description/icon_postit.png"/>
+    <menuitem name="PostIt" id="menu_prisme_postit" parent="menu_prisme_postit_base" sequence="22" action="action_prisme_postit"/>
+    <menuitem name="PostIt Tag" id="menu_prisme_postit_tag" parent="menu_prisme_postit_base" sequence="23" action="action_prisme_postit_tag"/>
     <record model="prisme.postit.day" id="0">
         <field name="name">Monday</field>
         <field name="nbr">0</field>
     </record>
-
     <record model="prisme.postit.day" id="1">
         <field name="name">Tuesday</field>
         <field name="nbr">1</field>
     </record>
-
     <record model="prisme.postit.day" id="2">
         <field name="name">Wednesday</field>
         <field name="nbr">2</field>
     </record>
-
     <record model="prisme.postit.day" id="3">
         <field name="name">Thursday</field>
         <field name="nbr">3</field>
     </record>
-
     <record model="prisme.postit.day" id="4">
         <field name="name">Friday</field>
         <field name="nbr">4</field>
     </record>
-
     <record model="prisme.postit.day" id="5">
         <field name="name">Saturday</field>
         <field name="nbr">5</field>
     </record>
-
     <record model="prisme.postit.day" id="6">
         <field name="name">Sunday</field>
         <field name="nbr">6</field>
     </record>
-
 </odoo>

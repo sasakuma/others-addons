@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
 {
     'name': 'Postit',
-    'version': '10.0.1.0.0',
+    'version': '11.0.1.0.0',
     'author': 'Prisme',
     'maintainer': 'MultidadosTI',
     'website': 'www.multidadosti.com.br',
@@ -17,15 +16,14 @@
         'mail',
     ],
     'data': [
-        'views/postit_view.xml',
-        'views/postit_workflow.xml',
-        'data/init_scheduler.xml',
+        'data/ir_cron.xml',
         'security/ir.model.access.csv',
+        'views/postit_view.xml',
     ],
     'css': [
         'static/src/css/note.css',
     ],
-    'installable': False,
+    'installable': True,
     'application': True,
     'auto_install': False,
 }
