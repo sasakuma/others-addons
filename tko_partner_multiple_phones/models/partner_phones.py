@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -43,7 +42,8 @@ class PartnerPhoneType(models.Model):
     """ Phone Type Celular or Telefone """
 
     name = fields.Char('name', size=64, required=True)
-    type = fields.Selection([('m', 'Celular'), ('p', 'Telefone')], string='Type')
+    type = fields.Selection([('m', 'Celular'), ('p', 'Telefone')],
+                            string='Type')
 
 
 class PartnerPhoneNumber(models.Model):
@@ -55,13 +55,16 @@ class PartnerPhoneNumber(models.Model):
         return self.env.user.company_id.country_id.id or False
 
     number = fields.Char('Number', size=64, required=True)
-    partner_id = fields.Many2one('res.partner', string=u'Partner', ondelete="cascade")
+    partner_id = fields.Many2one('res.partner', string=u'Partner',
+                                 ondelete="cascade")
     type_id = fields.Many2one('partner.phone.type', 'Type', required=True)
-    country_id = fields.Many2one('res.country', u'Country', required=True, default=_get_default_country)
+    country_id = fields.Many2one('res.country', u'Country', required=True,
+                                 default=_get_default_country)
     state_id = fields.Many2one('partner.phone.state', u'State')
-    status = fields.Selection(_status_vals, related='state_id.status', string=u'Status')
-    is_main = fields.Boolean('Is Main', help="Main Phone/Celular", default=False)
-
+    status = fields.Selection(_status_vals, related='state_id.status',
+                              string=u'Status')
+    is_main = fields.Boolean('Is Main', help="Main Phone/Celular",
+                             default=False)
     _order = 'number'
 
     _sql_constraints = [
@@ -74,7 +77,9 @@ class PartnerPhoneNumber(models.Model):
     @api.multi
     def set_main_phone(self):
         for record in self:
-            partner_phone_ids = self.search([('partner_id', '=', record.partner_id.id), ('type_id', '=', record.type_id.id)])
+            partner_phone_ids = self.search(
+                [('partner_id', '=', record.partner_id.id), (
+                    'type_id', '=', record.type_id.id)])
             partner_phone_ids.write({'is_main': False})
             vals = {'is_main': 't'}
             if record.type_id.type == 'm':
