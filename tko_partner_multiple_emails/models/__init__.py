@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -22,5 +22,5 @@
 #
 ##############################################################################
 
-import res_partner
-import res_partner_email
+from . import res_partner
+from . import res_partner_email
