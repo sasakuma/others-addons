@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-from __future__ import print_function
-import datetime
+from datetime import datetime
 
 from odoo import tools
 from odoo import api, fields, models
@@ -69,18 +67,18 @@ class PrismePostIt(models.Model):
     color = fields.Integer('Color Index')
 
     @api.model
-    def action_in_process(self):
+    def action_postit_active(self):
+        self.state = 'active'
+
+    @api.model
+    def action_postit_in_process(self):
         self.state = 'in_process'
         self.date_start = fields.Datetime.now()
 
     @api.model
-    def action_close(self):
+    def action_postit_close(self):
         self.state = 'terminated'
         self.date_end = fields.Datetime.now()
-
-    @api.model
-    def action_active(self):
-        return self.write({'state': 'active'})
 
     @api.model
     def scheduled_action(self):
@@ -219,7 +217,7 @@ class PrismePostIt(models.Model):
 
         for item in ids:
             post_vars = {
-                'subject': u'Nova postit atribuído a você',
+                'subject': 'Nova postit atribuído a você',
                 'body': '#Postit - %s / %s' % (postit.name, postit.description),  # noqa: 501
                 'partner_ids': [(4, item)],
                 'message_type': 'notification',
