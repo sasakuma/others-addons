@@ -8,7 +8,7 @@
                 <sheet>
                     <field name="user_data" readonly="0">
                         <tree editable="bottom">
-                            <field name="partner_id" required="1" readonly="1"/>
+                            <field name="partner_id" required="1"/>
                             <field name="login" required="1"/>
                             <field name="password" required="1"/>
                             <field name="action_id" required="1"/>
