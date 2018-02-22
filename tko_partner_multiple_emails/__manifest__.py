@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -24,7 +24,7 @@
 
 {
     'name': 'Partner multiple emails',
-    'version': '0.008',
+    'version': '11.0.1.0.0',
     'category': 'Customizations',
     'sequence': 16,
     'complexity': 'normal',
@@ -45,7 +45,7 @@
     'demo': [],
     'update': [],
     'test': [],  # YAML files with tests
-    'installable': False,
+    'installable': True,
     'application': False,
     # If it's True, the modules will be auto-installed when all dependencies
     # are installed

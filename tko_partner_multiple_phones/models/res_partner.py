@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -34,5 +33,5 @@ _logger = logging.getLogger(__name__)
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    partner_phone_ids = fields.One2many('partner.phone.number', 'partner_id', string=u'Phones')
-
+    partner_phone_ids = fields.One2many('partner.phone.number', 'partner_id',
+                                        string=u'Phones')

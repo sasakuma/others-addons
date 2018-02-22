@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -24,7 +23,7 @@
 
 {
     'name': 'tko_contacts',
-    'version': '0.012',
+    'version': '11.0.1.0.0',
     'category': 'Customizations',
     'sequence': 119,
     'complexity': 'normal',
@@ -42,7 +41,7 @@
     'demo': [],
     'update': [],
     'test': [],  # YAML files with tests
-    'installable': False,
+    'installable': True,
     'application': False,
     'auto_install': False,
     'certificate': '',
