@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
-
 {
     'name': 'Postit Systray Menu',
-    'version': '10.0.1.0.0',
+    'version': '11.0.1.0.0',
     'author': 'MultidadosTI',
     'maintainer': 'MultidadosTI',
     'website': 'www.multidadosti.com.br',
@@ -23,7 +21,7 @@
     'qweb': [
         'static/src/xml/systray.xml',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }

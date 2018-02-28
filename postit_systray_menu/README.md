@@ -1,6 +1,6 @@
-## Calendar Systray Menu
+## Postit Systray Menu
 
-This Module creates a widget in navbar that links to calendar views.
+This Module creates a widget in navbar that links to postit views.
 
 ### Bug Tracker
 
