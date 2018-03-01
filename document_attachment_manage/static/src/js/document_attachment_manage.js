@@ -17,8 +17,8 @@ Sidebar.include({
                 res_model: 'ir.attachment',
                 domain: [
                     '&',
-                    ['res_model', '=', self.dataset.model],
-                    ['res_id', '=', self.model_id]
+                    ['res_model', '=', self.env.model],
+                    ['res_id', '=', self.env.activeIds[0]]
                 ],
                 view_mode: 'tree,form',
                 view_type: 'form',
@@ -27,8 +27,8 @@ Sidebar.include({
                     [false, 'form']
                 ],
                 context: {
-                    'default_res_model': self.dataset.model,
-                    'default_res_id': self.model_id
+                    'default_res_model': self.env.model,
+                    'default_res_id': self.env.activeIds[0]
                 }
             });
             evt.preventDefault();
