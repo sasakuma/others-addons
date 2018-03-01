@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 ##############################################################################
 #
 #    Copyright (c) 2016 Amzsys IT Solutions Pvt Ltd
@@ -22,7 +21,7 @@
 
 {
     'name': 'Web ListView Row Count',
-    'version': '10.0.1.0.0',
+    'version': '11.0.1.0.0',
     'category': 'Tools',
     'description': """ This module helps to identify row count of list view
     easily """,
@@ -32,7 +31,7 @@
     'sequence': 9,
     'depends': ['web'],
     'data': [],
-    'installable': False,
+    'installable': True,
     'application': True,
     'auto_install': False,
     'qweb': [
