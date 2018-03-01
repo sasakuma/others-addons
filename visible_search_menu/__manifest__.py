@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 {
     'license': 'LGPL-3',
     'name': "Visible Search Menu",
@@ -9,12 +8,12 @@
     'website': "https://renjie.me",
     'support': 'i@renjie.me',
     'category': 'Extra Tools',
-    'version': '10.0.1.0.0',
+    'version': '11.0.1.0.0',
     'depends': ['web'],
     'data': [
         'views/webclient_templates.xml',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }
