@@ -10,7 +10,7 @@
         'hr',
     ],
     'data': [
-        'views/analytic.xml',
+        'views/account_analytic_account.xml',
     ],
     'installable': True,
     'auto_install': False,
