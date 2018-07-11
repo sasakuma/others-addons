@@ -5,4 +5,10 @@
               parent="contacts.res_partner_menu_config"
               sequence="40"
               />
+
+    <!-- Remove submenu Conta Bancária do menu Configuração na tela de Contatos -->
+    <record model="ir.ui.menu" id="contacts.menu_config_bank_accounts">
+        <field name="active" eval="False"/>
+    </record>
+    
 </odoo>
