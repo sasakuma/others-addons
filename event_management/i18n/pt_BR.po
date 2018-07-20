@@ -1,0 +1,430 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* event_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-20 18:01+0000\n"
+"PO-Revision-Date: 2018-07-20 15:17-0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: pt_BR\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: event_management
+#: code:addons/event_management/models/event_management.py:209
+#, python-format
+msgid ""
+"\"Date to\" cannot be set before \"Date from\".\n"
+"\n"
+"Check the \"Date from\" and \"Date to\" of the \"%s\" service"
+msgstr ""
+"\"Data para\" não pode ser definido antes de \"Data de\".\n"
+"\n"
+"Verifique o \"Data de\" e \"Data para\" do serviço \"%s\""
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_type_event_count
+msgid "# of Events"
+msgstr "# de Eventos"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_invoice_count
+msgid "# of Invoices"
+msgstr "# de Faturas"
+
+#. module: event_management
+#: model:ir.ui.view,arch_db:event_management.event_management_kanban
+msgid "<span class=\" o_primary\" style=\"float: left;\">Total Orders :</span>"
+msgstr "<span class=\" o_primary\" style=\"float: left;\">Total de Pedidos :</span>"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_service_line_amount
+msgid "Amount"
+msgstr "Montante"
+
+#. module: event_management
+#: model:ir.ui.view,arch_db:event_management.event_management_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: event_management
+#: selection:event.management,state:0
+msgid "Canceled"
+msgstr "Cancelado"
+
+#. module: event_management
+#: selection:event.service.line,service:0
+msgid "Catering"
+msgstr "Aprovisionamento"
+
+#. module: event_management
+#: model:ir.actions.act_window,help:event_management.event_management_action
+msgid "Click to add an event order."
+msgstr "Clique para adicionar um pedido de evento."
+
+#. module: event_management
+#: model:ir.actions.act_window,help:event_management.event_management_type_action
+msgid "Click to add an event type."
+msgstr "Clique para adicionar um tipo de evento."
+
+#. module: event_management
+#: selection:event.management,state:0
+#: model:ir.ui.view,arch_db:event_management.event_management_form_view
+msgid "Close"
+msgstr "Fechar"
+
+#. module: event_management
+#: model:ir.ui.menu,name:event_management.event_management_configuration_menu
+msgid "Configuration"
+msgstr "Configuração"
+
+#. module: event_management
+#: model:ir.ui.view,arch_db:event_management.event_management_form_view
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: event_management
+#: selection:event.management,state:0
+#: model:ir.model.fields,field_description:event_management.field_event_partner_confirmed
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: event_management
+#: model:ir.ui.view,arch_db:event_management.event_management_form_view
+msgid "Create Invoice"
+msgstr "Criar Fatura"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_create_uid
+#: model:ir.model.fields,field_description:event_management.field_event_management_type_create_uid
+#: model:ir.model.fields,field_description:event_management.field_event_partner_create_uid
+#: model:ir.model.fields,field_description:event_management.field_event_service_line_create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_create_date
+#: model:ir.model.fields,field_description:event_management.field_event_management_type_create_date
+#: model:ir.model.fields,field_description:event_management.field_event_partner_create_date
+#: model:ir.model.fields,field_description:event_management.field_event_service_line_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_currency_id
+#: model:ir.model.fields,field_description:event_management.field_event_service_line_currency_id
+msgid "Currency"
+msgstr "Moeda"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_partner_id
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: event_management
+#: model:ir.actions.act_window,name:event_management.event_dashboard_action
+#: model:ir.ui.menu,name:event_management.event_management_dashboard
+msgid "Dashboard"
+msgstr "Painel"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_date
+msgid "Date"
+msgstr "Data"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_service_line_date_from
+msgid "Date from"
+msgstr "Date de"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_service_line_date_to
+msgid "Date to"
+msgstr "Data para"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_display_name
+#: model:ir.model.fields,field_description:event_management.field_event_management_type_display_name
+#: model:ir.model.fields,field_description:event_management.field_event_partner_display_name
+#: model:ir.model.fields,field_description:event_management.field_event_service_line_display_name
+msgid "Display Name"
+msgstr "Nome exibido"
+
+#. module: event_management
+#: selection:event.service.line,state:0
+msgid "Done"
+msgstr "Concluído"
+
+#. module: event_management
+#: selection:event.management,state:0
+msgid "Draft"
+msgstr "Provisório"
+
+#. module: event_management
+#: sql_constraint:event.service.line:0
+msgid "Duplication Of Service In The Service Lines Is not Allowed"
+msgstr "A duplicação de serviço nas linhas de serviço não é permitida"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_end_date
+msgid "End date"
+msgstr "Data Final"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_partner_event_management_id
+#: model:ir.model.fields,field_description:event_management.field_event_service_line_event_id
+msgid "Event"
+msgstr "Evento"
+
+#. module: event_management
+#: model:ir.actions.act_window,name:event_management.event_management_action
+#: model:ir.module.category,name:event_management.category_event_management
+#: model:ir.ui.menu,name:event_management.event_management_main_menu
+#: model:ir.ui.menu,name:event_management.event_management_sub_menu1
+#: model:ir.ui.menu,name:event_management.event_management_sub_menu2
+#: model:ir.ui.view,arch_db:event_management.event_management_search_view
+msgid "Event Management"
+msgstr "Gestão de Eventos"
+
+#. module: event_management
+#: model:res.groups,name:event_management.group_event_manager
+msgid "Event Manager"
+msgstr "Gerente de Eventos"
+
+#. module: event_management
+#: model:ir.ui.view,arch_db:event_management.event_management_calender_view
+#: model:ir.ui.view,arch_db:event_management.event_management_graph_view
+msgid "Event Orders"
+msgstr "Ordens de Eventos"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_event_partner_ids
+msgid "Event Partner"
+msgstr "Parceiro de Eventos"
+
+#. module: event_management
+#: model:ir.ui.menu,name:event_management.event_management_type_menu
+#: model:ir.ui.view,arch_db:event_management.event_management_search_view
+msgid "Event Type"
+msgstr "Tipo de Evento"
+
+#. module: event_management
+#: model:ir.actions.act_window,name:event_management.event_management_type_action
+msgid "Event type"
+msgstr "Tipo de Evento"
+
+#. module: event_management
+#: model:ir.ui.view,arch_db:event_management.event_management_search_view
+msgid "Group By"
+msgstr "Agrupar Por"
+
+#. module: event_management
+#: model:ir.actions.act_window,help:event_management.event_management_action
+msgid "Here you can create and manage your events."
+msgstr "Aqui você pode criar e gerenciar seus eventos."
+
+#. module: event_management
+#: model:ir.actions.act_window,help:event_management.event_management_type_action
+msgid "Here you can create different types of events."
+msgstr "Aqui você pode criar diferentes tipos de eventos."
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_id
+#: model:ir.model.fields,field_description:event_management.field_event_management_type_id
+#: model:ir.model.fields,field_description:event_management.field_event_partner_id
+#: model:ir.model.fields,field_description:event_management.field_event_service_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_image
+#: model:ir.model.fields,field_description:event_management.field_event_management_type_image
+msgid "Image"
+msgstr "Imagem"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_pending_invoice
+msgid "Invoice Pending"
+msgstr "Fatura Pendente"
+
+#. module: event_management
+#: selection:event.management,state:0
+#: model:ir.model.fields,field_description:event_management.field_event_service_line_invoiced
+msgid "Invoiced"
+msgstr "Faturado"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_invoice_ids
+#: model:ir.ui.view,arch_db:event_management.event_management_form_view
+msgid "Invoices"
+msgstr "Faturas"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management___last_update
+#: model:ir.model.fields,field_description:event_management.field_event_management_type___last_update
+#: model:ir.model.fields,field_description:event_management.field_event_partner___last_update
+#: model:ir.model.fields,field_description:event_management.field_event_service_line___last_update
+msgid "Last Modified on"
+msgstr "Última modificação em"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_type_write_uid
+#: model:ir.model.fields,field_description:event_management.field_event_management_write_uid
+#: model:ir.model.fields,field_description:event_management.field_event_partner_write_uid
+#: model:ir.model.fields,field_description:event_management.field_event_service_line_write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_type_write_date
+#: model:ir.model.fields,field_description:event_management.field_event_management_write_date
+#: model:ir.model.fields,field_description:event_management.field_event_partner_write_date
+#: model:ir.model.fields,field_description:event_management.field_event_service_line_write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_name
+#: model:ir.model.fields,field_description:event_management.field_event_management_type_name
+msgid "Name"
+msgstr "Nome"
+
+#. module: event_management
+#: selection:event.service.line,service:0
+msgid "None"
+msgstr "Nenhum"
+
+#. module: event_management
+#: model:ir.ui.view,arch_db:event_management.event_management_form_view
+msgid "Participants"
+msgstr "Participantes"
+
+#. module: event_management
+#: model:ir.model,name:event_management.model_res_partner
+#: model:ir.model.fields,field_description:event_management.field_event_partner_partner_ids
+msgid "Partner"
+msgstr "Parceiro"
+
+#. module: event_management
+#: selection:event.service.line,state:0
+msgid "Pending"
+msgstr "Pendente"
+
+#. module: event_management
+#: code:addons/event_management/models/event_management.py:147
+#, python-format
+msgid "Please define income account for this product: \"%s\" (id:%d)."
+msgstr "Por favor, defina a conta de receita para este produto: \"%s\" (id:%d)."
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_service_line_related_product
+msgid "Related Product"
+msgstr "Produto relacionado"
+
+#. module: event_management
+#: model:ir.ui.menu,name:event_management.event_management_service
+msgid "Service"
+msgstr "Serviço"
+
+#. module: event_management
+#: model:ir.ui.view,arch_db:event_management.event_management_form_view
+msgid "Service Lines"
+msgstr "Linhas de Serviço"
+
+#. module: event_management
+#: model:ir.ui.view,arch_db:event_management.event_management_form_view
+msgid "Service Lines Form"
+msgstr "Formulário de Linhas de Serviço"
+
+#. module: event_management
+#: model:ir.ui.view,arch_db:event_management.event_management_form_view
+msgid "Service Lines Tree"
+msgstr "Lista de Linhas de Serviço"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_service_line
+#: model:ir.model.fields,field_description:event_management.field_event_service_line_service
+msgid "Services"
+msgstr "Serviços"
+
+#. module: event_management
+#: model:ir.ui.view,arch_db:event_management.event_management_kanban
+msgid "Settings"
+msgstr "Configurações"
+
+#. module: event_management
+#: model:ir.ui.view,arch_db:event_management.event_management_form_view
+msgid "Setup default terms and conditions in your company settings."
+msgstr "Configure os termos e condições padrão nas configurações da sua empresa."
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_start_date
+msgid "Start date"
+msgstr "Data Inicial"
+
+#. module: event_management
+#: code:addons/event_management/models/event_management.py:76
+#, python-format
+msgid "Start date must be less than End date"
+msgstr "A data de início deve ser menor que a data de término"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_state
+#: model:ir.model.fields,field_description:event_management.field_event_service_line_state
+#: model:ir.ui.view,arch_db:event_management.event_management_search_view
+msgid "State"
+msgstr "Estado"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_note
+msgid "Terms and conditions"
+msgstr "Termos e condições"
+
+#. module: event_management
+#: model:ir.model.fields,help:event_management.field_event_management_image
+#: model:ir.model.fields,help:event_management.field_event_management_type_image
+msgid "This field holds the image used as image for the event, limited to 1080x720px."
+msgstr "Este campo contém a imagem usada como imagem para o evento, limitada a 1080x720px."
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_price_subtotal
+msgid "Total"
+msgstr "Total"
+
+#. module: event_management
+#: model:ir.model.fields,field_description:event_management.field_event_management_type_of_event
+msgid "Type"
+msgstr "Tipo"
+
+#. module: event_management
+#: code:addons/event_management/models/event_management.py:97
+#, python-format
+msgid "You can close an event only when all services is Done and Invoiced"
+msgstr "Você pode fechar um evento somente quando todos os serviços forem Concluídos e Faturados"
+
+#. module: event_management
+#: model:ir.model,name:event_management.model_event_management
+msgid "event.management"
+msgstr "event.management"
+
+#. module: event_management
+#: model:ir.model,name:event_management.model_event_management_type
+msgid "event.management.type"
+msgstr "event.management.type"
+
+#. module: event_management
+#: model:ir.model,name:event_management.model_event_partner
+msgid "event.partner"
+msgstr "event.partner"
+
+#. module: event_management
+#: model:ir.model,name:event_management.model_event_service_line
+msgid "event.service.line"
+msgstr "event.service.line"
