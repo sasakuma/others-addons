@@ -1,0 +1,272 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* event_catering
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-20 18:18+0000\n"
+"PO-Revision-Date: 2018-07-20 15:32-0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: pt_BR\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: event_catering
+#: model:ir.ui.view,arch_db:event_catering.event_management_form_view_catering
+msgid "<span class=\"o_stat_info\">Done</span>"
+msgstr "<span class=\"o_stat_info\">Concluído</span>"
+
+#. module: event_catering
+#: model:ir.ui.view,arch_db:event_catering.event_management_form_view_catering
+msgid "<span class=\"o_stat_info\">Pending</span>"
+msgstr "<span class=\"o_stat_info\">Pendente</span>"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_catering_works_amount
+msgid "Amount"
+msgstr "Montante"
+
+#. module: event_catering
+#: model:ir.ui.menu,name:event_catering.event_management_catering_menu
+#: model:ir.ui.view,arch_db:event_catering.event_catering_search_view
+#: model:ir.ui.view,arch_db:event_catering.event_management_form_view_catering
+msgid "Catering"
+msgstr "Aprovisionamento"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_on
+msgid "Catering Active"
+msgstr "Aprovisionamento Ativo"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_done
+msgid "Catering Done"
+msgstr "Aprovisionamento Concluído"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_catering_works_catering_id
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_catering_id
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_id
+msgid "Catering Id"
+msgstr "Catering Id"
+
+#. module: event_catering
+#: model:ir.ui.view,arch_db:event_catering.event_catering_form_view
+msgid "Catering Lines Form"
+msgstr "Formulário de Linhas de Aprovisionamento"
+
+#. module: event_catering
+#: model:ir.ui.view,arch_db:event_catering.event_catering_form_view
+msgid "Catering Lines Tree"
+msgstr "Lista de Linhas de Aprovisionamento"
+
+#. module: event_catering
+#: model:res.groups,name:event_catering.group_catering_manager
+msgid "Catering Manager"
+msgstr "Gerente de Aprovisionamento"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_pending
+msgid "Catering Pending"
+msgstr "Aprovisionamento Pendente"
+
+#. module: event_catering
+#: model:ir.actions.act_window,name:event_catering.event_catering_action
+#: model:product.product,name:event_catering.catering_service_product
+#: model:product.template,name:event_catering.catering_service_product_product_template
+msgid "Catering Service"
+msgstr "Serviço de Aprovisionamento"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_catering_works
+#: model:ir.ui.view,arch_db:event_catering.event_catering_form_view
+msgid "Catering Works"
+msgstr "Trabalhos de Aprovisionamento"
+
+#. module: event_catering
+#: model:ir.actions.act_window,help:event_catering.event_catering_action
+msgid "Catering service is created from event order."
+msgstr "O serviço de aprovisionamento é criado a partir da ordem do evento."
+
+#. module: event_catering
+#: code:addons/event_catering/models/catering_service.py:123
+#, python-format
+msgid "Catering works are pending"
+msgstr "Trabalhos de aprovisionamento estão pendentes"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_catering_works_create_uid
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_catering_works_create_date
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_catering_works_currency_id
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_currency_id
+msgid "Currency"
+msgstr "Moeda"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_date
+msgid "Date"
+msgstr "Data"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_catering_works_display_name
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_display_name
+msgid "Display Name"
+msgstr "Nome exibido"
+
+#. module: event_catering
+#: selection:event.management.catering,state:0
+#: model:ir.ui.view,arch_db:event_catering.event_catering_form_view
+msgid "Done"
+msgstr "Done"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_end_date
+msgid "End date"
+msgstr "Data Final"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_parent_event
+msgid "Event"
+msgstr "Evento"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_event_type
+#: model:ir.ui.view,arch_db:event_catering.event_catering_search_view
+msgid "Event Type"
+msgstr "Tipo de Evento"
+
+#. module: event_catering
+#: model:ir.ui.view,arch_db:event_catering.event_catering_search_view
+msgid "Group By"
+msgstr "Agrupar Por"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_catering_works_id
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_id_4479
+msgid "ID"
+msgstr "ID"
+
+#. module: event_catering
+#: model:ir.ui.view,arch_db:event_catering.event_catering_form_view
+msgid "If work complete, click here"
+msgstr "Se o trabalho estiver concluído, clique aqui"
+
+#. module: event_catering
+#: model:ir.ui.view,arch_db:event_catering.event_catering_form_view
+msgid "If work is not complete, click here"
+msgstr "Se o trabalho não estiver completo, clique aqui"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_catering_works___last_update
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering___last_update
+msgid "Last Modified on"
+msgstr "Última modificação em"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_catering_works_write_uid
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_catering_works_write_date
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_name
+msgid "Name"
+msgstr "Nome"
+
+#. module: event_catering
+#: selection:event.management.catering,state:0
+#: model:ir.ui.view,arch_db:event_catering.event_catering_search_view
+msgid "Open"
+msgstr "Aberto"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_catering_works_quantity
+msgid "Quantity"
+msgstr "Quantidade"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_catering_works_service
+msgid "Services"
+msgstr "Serviços"
+
+#. module: event_catering
+#: model:ir.ui.view,arch_db:event_catering.event_catering_form_view
+msgid "Setup default terms and conditions in your company settings."
+msgstr "Configure os termos e condições padrão nas configurações da sua empresa."
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_start_date
+msgid "Start date"
+msgstr "Data Inicial"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_state
+msgid "State"
+msgstr "Estado"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_catering_works_sub_total
+msgid "Sub Total"
+msgstr "Sub Total"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_note
+msgid "Terms and conditions"
+msgstr "Termos e condições"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_management_catering_price_subtotal
+msgid "Total"
+msgstr "Total"
+
+#. module: event_catering
+#: model:ir.model.fields,field_description:event_catering.field_event_catering_works_work_done
+msgid "Work done"
+msgstr "Trabalho concluído"
+
+#. module: event_catering
+#: model:ir.actions.act_window,help:event_catering.event_catering_action
+msgid "You can't create a direct catering."
+msgstr "Você não pode criar um aprovisionamento direto."
+
+#. module: event_catering
+#: model:ir.model,name:event_catering.model_event_catering_works
+msgid "event.catering.works"
+msgstr "event.catering.works"
+
+#. module: event_catering
+#: model:ir.model,name:event_catering.model_event_management
+msgid "event.management"
+msgstr "event.management"
+
+#. module: event_catering
+#: model:ir.model,name:event_catering.model_event_management_catering
+msgid "event.management.catering"
+msgstr "event.management.catering"
+
+#. module: event_catering
+#: model:ir.model,name:event_catering.model_event_service_line
+msgid "event.service.line"
+msgstr "event.service.line"
