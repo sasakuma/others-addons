@@ -42,7 +42,7 @@ msgstr "# de Faturas"
 #. module: event_management
 #: model:ir.ui.view,arch_db:event_management.event_management_kanban
 msgid "<span class=\" o_primary\" style=\"float: left;\">Total Orders :</span>"
-msgstr "<span class=\" o_primary\" style=\"float: left;\">Total de Pedidos :</span>"
+msgstr "<span class=\" o_primary\" style=\"float: left;\">Total de Eventos :</span>"
 
 #. module: event_management
 #: model:ir.model.fields,field_description:event_management.field_event_service_line_amount
@@ -78,7 +78,7 @@ msgstr "Clique para adicionar um tipo de evento."
 #: selection:event.management,state:0
 #: model:ir.ui.view,arch_db:event_management.event_management_form_view
 msgid "Close"
-msgstr "Fechar"
+msgstr "Fechado"
 
 #. module: event_management
 #: model:ir.ui.menu,name:event_management.event_management_configuration_menu
