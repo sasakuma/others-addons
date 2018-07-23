@@ -102,13 +102,14 @@
                                         <field name="amount"/>
                                         <field name="work_done" invisible="1"/>
                                         <field name="currency_id" invisible="1"/>
-                                        <button name="work_completed" icon="fa fa-check-square" type="object"
+                                        <button name="work_completed" type="object" string="Faturável"
                                                 attrs="{'invisible': [('work_done', '=', False)]}"
-                                                help="If work is not complete, click here"/>
-                                        <button name="not_completed" icon="fa fa-close" type="object"
+                                                help="If work is not complete, click here">
+                                        </button>
+                                        <button name="not_completed" type="object" string="Não Faturável"
                                                 attrs="{'invisible': [('work_done', '=', True)]}"
-                                                help="If work complete, click here"/>
-
+                                                help="If work complete, click here">
+                                        </button>
                                         <field name="sub_total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                                     </tree>
                                 </field>
