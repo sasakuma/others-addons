@@ -206,7 +206,7 @@
             </field>
         </record>
 
-        <menuitem id="event_management_main_menu" name="Event Management"/>
+        <menuitem id="event_management_main_menu" name="Event Management" web_icon="event_management,static/img/event.png"/>
         <menuitem id="event_management_sub_menu1" name="Event Management" parent="event_management_main_menu"
                   sequence="5"/>
         <menuitem id="event_management_sub_menu2" name="Event Management" parent="event_management_sub_menu1"
