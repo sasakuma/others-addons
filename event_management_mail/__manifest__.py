@@ -21,7 +21,7 @@
 ###################################################################################
 {
     'name': 'Event Mail',
-    'version': '10.0.1.0.0',
+    'version': '11.0.1.0.0',
     'summary': """Send Email Notification to the Customer at the Time of Event Order Confirmation.""",
     'description': """Send Email Notification to the Customer at the Time of Event Order Confirmation.""",
     "category": "Tools",
