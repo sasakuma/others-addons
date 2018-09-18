@@ -1,0 +1,401 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* label
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-18 19:08+0000\n"
+"PO-Revision-Date: 2018-09-18 16:22-0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: pt_BR\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: label
+#: model:ir.ui.view,arch_db:label.view_label_print_form
+msgid "Add sidebar button"
+msgstr "Adicionar botão da barra"
+
+#. module: label
+#: model:ir.ui.view,arch_db:label.view_label_print_form
+msgid "Advance"
+msgstr "Avançar"
+
+#. module: label
+#: selection:label.print.field,type:0
+msgid "Barcode"
+msgstr "Código de barras"
+
+#. module: label
+#: model:ir.ui.view,arch_db:label.view_label_print_wizard
+msgid "Barcode height and width."
+msgstr "Altura e largura do código de barras."
+
+#. module: label
+#: selection:label.print.field,position:0
+msgid "Bottom"
+msgstr "Inferior"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_config_bottom_margin
+msgid "Bottom Margin  (in mm)"
+msgstr "Margem Inferior (em mm)"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_print_wizard_brand_id
+msgid "Brand Name"
+msgstr "Marca"
+
+#. module: label
+#: model:ir.ui.view,arch_db:label.view_label_print_wizard
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_config_cell_spacing
+msgid "Cell Spacing"
+msgstr "Espaçamento Celular"
+
+#. module: label
+#: model:ir.ui.menu,name:label.menu_config
+msgid "Configuration"
+msgstr "Configuração de Etiqueta"
+
+#. module: label
+#: model:ir.model,name:label.model_label_config
+msgid "Configuration for label"
+msgstr "Configuração para etiqueta"
+
+#. module: label
+#: model:ir.model,name:label.model_label_brand
+msgid "Configured Label Brands"
+msgstr "Marcas de etiquetas configuradas"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_brand_create_uid
+#: model:ir.model.fields,field_description:label.field_label_config_create_uid
+#: model:ir.model.fields,field_description:label.field_label_print_create_uid
+#: model:ir.model.fields,field_description:label.field_label_print_field_create_uid
+#: model:ir.model.fields,field_description:label.field_label_print_wizard_create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_brand_create_date
+#: model:ir.model.fields,field_description:label.field_label_config_create_date
+#: model:ir.model.fields,field_description:label.field_label_print_create_date
+#: model:ir.model.fields,field_description:label.field_label_print_field_create_date
+#: model:ir.model.fields,field_description:label.field_label_print_wizard_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_brand_display_name
+#: model:ir.model.fields,field_description:label.field_label_config_display_name
+#: model:ir.model.fields,field_description:label.field_label_print_display_name
+#: model:ir.model.fields,field_description:label.field_label_print_field_display_name
+#: model:ir.model.fields,field_description:label.field_label_print_wizard_display_name
+#: model:ir.model.fields,field_description:label.field_report_label_report_label_display_name
+msgid "Display Name"
+msgstr "Nome para Exibição"
+
+#. module: label
+#: model:ir.ui.view,arch_db:label.view_label_print_form
+msgid "Display a button in the sidebar of related documents to open a composition wizard"
+msgstr "Exibir um botão na barra lateral de documentos relacionados para abrir um assistente de composição"
+
+#. module: label
+#: model:ir.model,name:label.model_ir_model_fields
+#: model:ir.model.fields,field_description:label.field_label_print_field_field_id
+#: model:ir.model.fields,field_description:label.field_label_print_field_ids
+#: model:ir.model.fields,field_description:label.field_label_print_field_python_field
+#: model:ir.ui.view,arch_db:label.view_label_print_form
+msgid "Fields"
+msgstr "Campos"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_print_field_fontsize
+msgid "Font Size"
+msgstr "Tamanho da fonte"
+
+#. module: label
+#: code:addons/label/report/dynamic_label.py:128
+#, python-format
+msgid "Form content is missing,                         this report cannot be printed."
+msgstr "O conteúdo do formulário está faltando,                         este relatório não pode ser impresso."
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_print_wizard_barcode_height
+#: model:ir.model.fields,field_description:label.field_label_print_wizard_image_height
+msgid "Height"
+msgstr "Altura"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_config_height
+msgid "Height (in mm)"
+msgstr "Altura (em mm)"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_brand_id
+#: model:ir.model.fields,field_description:label.field_label_config_id
+#: model:ir.model.fields,field_description:label.field_label_print_field_id
+#: model:ir.model.fields,field_description:label.field_label_print_id
+#: model:ir.model.fields,field_description:label.field_label_print_wizard_id
+#: model:ir.model.fields,field_description:label.field_report_label_report_label_id
+msgid "ID"
+msgstr "ID"
+
+#. module: label
+#: selection:label.print.field,type:0
+msgid "Image"
+msgstr "Imagem"
+
+#. module: label
+#: model:ir.ui.view,arch_db:label.view_label_print_wizard
+msgid "Image height and width."
+msgstr "Altura e largura da imagem."
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_print_wizard_is_barcode
+msgid "Is Barcode?"
+msgstr "É o código de barras?"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_print_wizard_is_image
+msgid "Is Image?"
+msgstr "É imagem?"
+
+#. module: label
+#: model:ir.actions.report,name:label.dynamic_label
+#: model:ir.model.fields,field_description:label.field_label_config_label_main_id
+#: model:ir.ui.view,arch_db:label.view_label_print_form
+msgid "Label"
+msgstr "Rótulo"
+
+#. module: label
+#: code:addons/label/models/label_print.py:44
+#, python-format
+msgid "Label (%s)"
+msgstr "Rótulo (% s)"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_brand_label_config_ids
+#: model:ir.ui.view,arch_db:label.view_label_brand_form
+msgid "Label Config"
+msgstr "Configuração de etiqueta"
+
+#. module: label
+#: model:ir.actions.act_window,name:label.action_label_config_form
+#: model:ir.ui.menu,name:label.menu_label_config_view
+#: model:ir.ui.view,arch_db:label.view_label_brand_form
+#: model:ir.ui.view,arch_db:label.view_label_brand_tree
+#: model:ir.ui.view,arch_db:label.view_label_config_form
+msgid "Label Configuration"
+msgstr "Configuração de etiqueta"
+
+#. module: label
+#: model:ir.actions.act_window,name:label.action_label_print_form
+#: model:ir.model,name:label.model_label_print
+#: model:ir.ui.menu,name:label.menu_label_print_view
+msgid "Label Print"
+msgstr "Impressão de etiquetas"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_print_wizard_name
+msgid "Label Size"
+msgstr "Tamanho do rótulo"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_brand___last_update
+#: model:ir.model.fields,field_description:label.field_label_config___last_update
+#: model:ir.model.fields,field_description:label.field_label_print___last_update
+#: model:ir.model.fields,field_description:label.field_label_print_field___last_update
+#: model:ir.model.fields,field_description:label.field_label_print_wizard___last_update
+#: model:ir.model.fields,field_description:label.field_report_label_report_label___last_update
+msgid "Last Modified on"
+msgstr "Última modificação em"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_brand_write_uid
+#: model:ir.model.fields,field_description:label.field_label_config_write_uid
+#: model:ir.model.fields,field_description:label.field_label_print_field_write_uid
+#: model:ir.model.fields,field_description:label.field_label_print_wizard_write_uid
+#: model:ir.model.fields,field_description:label.field_label_print_write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_brand_write_date
+#: model:ir.model.fields,field_description:label.field_label_config_write_date
+#: model:ir.model.fields,field_description:label.field_label_print_field_write_date
+#: model:ir.model.fields,field_description:label.field_label_print_wizard_write_date
+#: model:ir.model.fields,field_description:label.field_label_print_write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: label
+#: selection:label.print.field,position:0
+msgid "Left"
+msgstr "Esquerda"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_config_left_margin
+msgid "Left Margin (in mm)"
+msgstr "Margem Esquerda (em mm)"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_print_model_id
+msgid "Model"
+msgstr "Modelo"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_print_model_list
+msgid "Model List"
+msgstr "Lista de modelos"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_brand_brand_name
+#: model:ir.model.fields,field_description:label.field_label_config_name
+#: model:ir.model.fields,field_description:label.field_label_print_name
+msgid "Name"
+msgstr "Nome"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_print_field_newline
+msgid "New Line"
+msgstr "Nova Linha"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_print_field_nolabel
+msgid "No Label"
+msgstr "Sem rótulo"
+
+#. module: label
+#: selection:label.print.field,type:0
+msgid "Normal"
+msgstr "Normal"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_print_wizard_number_of_copy
+msgid "Number Of Copy"
+msgstr "Número de Cópias"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_print_field_position
+msgid "Position"
+msgstr "Posição"
+
+#. module: label
+#: model:ir.ui.view,arch_db:label.view_label_print_wizard
+msgid "Print"
+msgstr "Imprimir"
+
+#. module: label
+#: model:ir.ui.view,arch_db:label.view_label_print_wizard
+msgid "Print Label"
+msgstr "Etiqueta de impressão"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_print_field_python_expression
+msgid "Python Expression"
+msgstr "Expressão Python"
+
+#. module: label
+#: model:ir.ui.view,arch_db:label.view_label_print_form
+msgid "Python experession field must be start with obj. e.g:- obj.M2O_field.field_name"
+msgstr "O campo de experencia do Python deve ser iniciado com obj. por exemplo: - obj.M2O_field.field_name"
+
+#. module: label
+#: model:ir.ui.view,arch_db:label.view_label_print_form
+msgid "Remove sidebar button"
+msgstr "Remova o botão da barra"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_print_field_report_id
+#: model:ir.ui.view,arch_db:label.view_label_config_tree
+#: model:ir.ui.view,arch_db:label.view_label_print_tree
+msgid "Report"
+msgstr "Relatório"
+
+#. module: label
+#: selection:label.print.field,position:0
+msgid "Right"
+msgstr "Direita"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_config_right_margin
+msgid "Right Margin (in mm)"
+msgstr "Margem direita (em mm)"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_print_field_sequence
+msgid "Sequence"
+msgstr "Seqüência"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_print_ref_ir_act_report
+msgid "Sidebar action"
+msgstr "Ação da Barra Lateral"
+
+#. module: label
+#: model:ir.model.fields,help:label.field_label_print_ref_ir_act_report
+msgid ""
+"Sidebar action to make this\n"
+"                                        template available on records\n"
+"                                        of the related document model"
+msgstr ""
+"Ação da barra lateral para tornar isso\n"
+"                                        tmodelo disponível em registros\n"
+"                                         do modelo de documento relacionado"
+
+#. module: label
+#: selection:label.print.field,position:0
+msgid "Top"
+msgstr "Topo"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_config_top_margin
+msgid "Top Margin (in mm)"
+msgstr "Margem Superior (em mm)"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_print_field_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_print_wizard_barcode_width
+#: model:ir.model.fields,field_description:label.field_label_print_wizard_image_width
+msgid "Width"
+msgstr "Largura"
+
+#. module: label
+#: model:ir.model.fields,field_description:label.field_label_config_width
+msgid "Width (in mm)"
+msgstr "Largura (em mm)"
+
+#. module: label
+#: model:ir.model,name:label.model_label_print_field
+msgid "label.print.field"
+msgstr "label.print.field"
+
+#. module: label
+#: model:ir.model,name:label.model_label_print_wizard
+msgid "label.print.wizard"
+msgstr "label.print.wizard"
+
+#. module: label
+#: model:ir.ui.view,arch_db:label.view_label_print_wizard
+msgid "or"
+msgstr "ou"
+
+#. module: label
+#: model:ir.model,name:label.model_report_label_report_label
+msgid "report.label.report_label"
+msgstr "report.label.report_label"
